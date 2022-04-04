@@ -10,17 +10,22 @@ const Cover = () => {
     ]
 
     return (
-        <div className={styles.description} >
-            <div className={styles.lettersContainer}>
-                <ul>
-                    {nameLetters.map((value, index) => (
-                        <TitleLetter name={value} index={index} />
-                    ))}
-                </ul>
+        <div className={styles.coverContainer} >
+            <div className={styles.description} >
+                <div className={styles.lettersContainer}>
+                    <ul>
+                        {nameLetters.map((value, index) => (
+                            <TitleLetter name={value} index={index} />
+                        ))}
+                    </ul>
+                </div>
+                <h2>
+                    Software developer | Ches player | Physics enthousiast
+                </h2>
             </div>
-            <h2>
-                Software developer | Ches player | Physics enthousiast
-            </h2>
+            <div className={styles.sideBar} >
+                
+            </div>
         </div>
     );
 }

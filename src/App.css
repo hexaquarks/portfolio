@@ -1,17 +1,19 @@
+
+.mainPage {
+    width: 100vw;
+    height: 100vh;
+    height: 1000px;
+}
 .coverPage {
     width: 100%;
-    position:absolute;
-    top:0;
-    bottom:0;
-    align-content: center;
+    height: 100vh;
     background-color: black;
+    margin:0 auto;
 }
 
 .secondPage {
     width: 100%;
-    position:absolute;
-    top:0;
-    bottom:0;
-    align-content: center;
-    /* background-color: azure; */
+    height: 100vh;
+    background-color: rgb(161, 6, 6);
+    margin:0 auto;
 }

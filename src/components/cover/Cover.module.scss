@@ -1,21 +1,37 @@
-.description {
-    display: inlin-block;
+.coverContainer{
     width: 100%;
     height: inherit;
-    margin: 0 auto;
-    .lettersContainer {
-        vertical-align: middle;
+    display: flex;
+    justify-content: space-evenly;
+
+    .description {
+        margin-left:10%;
+        margin-top:10%;
+        display: inlin-block;
+        width: 40%;
+        height: inherit;
+        .lettersContainer {
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+    
+        h2 {
+            color: rgb(231, 231, 231);
+            word-wrap: break-word;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            // margin-left:10%;
+            vertical-align: middle;
+        }
     }
 
-    h2 {
-        color: rgb(231, 231, 231);
-        word-wrap: break-word;
-        font-style: italic;
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        margin: 0 auto;
-        vertical-align: middle;
-        padding-right: 20%;
+    .sideBar {
+        width: 40vh;
+        height: 60vh;
+        margin-top: 10%;
+        background-color:red;
+
     }
 }
 
