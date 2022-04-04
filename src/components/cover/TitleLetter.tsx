@@ -1,6 +1,6 @@
 import { useState } from "react";
+import styles from './Cover.module.scss';
 
-const styles = require('./Cover.module.css');
 
 const TitleLetter = (props : {name: string, index: number}) => {
 

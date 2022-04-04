@@ -1,0 +1,47 @@
+.description {
+    display: inlin-block;
+    width: 100%;
+    height: inherit;
+    margin: 0 auto;
+    .lettersContainer {
+        vertical-align: middle;
+    }
+
+    h2 {
+        color: rgb(231, 231, 231);
+        word-wrap: break-word;
+        font-style: italic;
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        margin: 0 auto;
+        vertical-align: middle;
+        padding-right: 20%;
+    }
+}
+
+li {
+    display: inline-block;
+    white-space: nowrap;
+    list-style: none;
+    font-size: 10rem;
+    color: rgb(231, 231, 231);
+    font-family: 'Perpetua', serif;
+}
+
+ul {
+    padding: 0;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.rotate {
+    animation: rotate 1s;
+    animation-fill-mode: forwards !important;
+}
+
+@keyframes rotate {
+    50% { 
+      transform: rotateY(180deg); 
+      color: #c69c6d;
+    }
+}

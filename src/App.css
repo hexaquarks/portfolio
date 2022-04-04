@@ -1,0 +1,17 @@
+.coverPage {
+    width: 100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    align-content: center;
+    background-color: black;
+}
+
+.secondPage {
+    width: 100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    align-content: center;
+    /* background-color: azure; */
+}

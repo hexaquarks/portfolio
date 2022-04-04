@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import TitleLetter from './TitleLetter';
-
-const styles = require('../cover/Cover.module.css');
+import styles from './Cover.module.scss';
+// const styles = require('./Cover.module.scss');
 
 const Cover = () => {
     const nameLetters = [
@@ -11,7 +11,7 @@ const Cover = () => {
 
     return (
         <div className={styles.description} >
-            <div>
+            <div className={styles.lettersContainer}>
                 <ul>
                     {nameLetters.map((value, index) => (
                         <TitleLetter name={value} index={index} />
@@ -19,7 +19,7 @@ const Cover = () => {
                 </ul>
             </div>
             <h2>
-                Software developer living in the Greater Montreal area. I am interested in most technologies across the back-end and front-end, and the respective practices associated with them.
+                Software developer | Ches player | Physics enthousiast
             </h2>
         </div>
     );

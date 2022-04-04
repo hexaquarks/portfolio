@@ -1,11 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Cover from './components/cover/Cover';
+import './App.css';
 
 function App() {
   return (
-    <Cover />
+    <div className="window">
+      <div className="coverPage"> 
+        <Cover />
+      </div>
+      <div className="secondPage"> 
+
+      </div>
+    </div>
   );
 }
 
