@@ -10,8 +10,7 @@ const Cover = () => {
         'A', 'n', 'g', 'h', 'e', 'l', 'i', 'c', 'i'
     ]
     const selectionItems = [
-        "About",'&nbsp;',"Projects",'&nbsp;', "Extra",
-        '&nbsp;', "Contact",'&nbsp;'
+        "About","Projects", "Extra", "Contact"
     ]
     return (
         <div className={styles.coverContainer} >

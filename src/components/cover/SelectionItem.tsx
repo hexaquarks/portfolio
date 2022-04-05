@@ -8,11 +8,17 @@ const SelectionItem = (props : {name: string, index: number}) => {
     const [animating, setAnimating] = useState<boolean>(false);
 
     return (
-        <div style={{backgroundColor: animating ? "blue" : "red"}} 
-            onMouseEnter={() => { setAnimating(true); }}
-            onMouseLeave={() => { setAnimating(false); }}
-        > 
-          {index % 2 == 0 ? name : ''}
+        <div className={styles.selectionBox}>
+            <span
+                onMouseEnter={() => { setAnimating(true); }}
+                onMouseLeave={() => { setAnimating(false); }}>
+                { name }
+            </span>
+            <div style={{backgroundColor: animating ? "blue" : "red"}} 
+                onMouseEnter={() => { setAnimating(true); }}
+                onMouseLeave={() => { setAnimating(false); }}
+            > 
+            </div>
         </div>
     )
 }

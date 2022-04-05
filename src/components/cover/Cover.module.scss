@@ -31,14 +31,24 @@
         margin-top: 10%;
         background-color:red;
         display: grid;
-        grid-template-columns: 2fr 0.1fr;
+        // grid-template-columns: 2fr 0.1fr;
+        grid-template-columns: 2fr;
         grid-template-rows: repeat(4, 0.5fr);
         grid-column-gap: 20px;
         grid-row-gap: 20px;
-        > div {
-            font-size : 2vw;
-            color: white;
-            transition: 0.25s;
+        .selectionBox {
+            display: grid;
+            // grid-template-columns: 2fr 0.1fr;
+            grid-template-columns: 1.8fr 0.2fr;
+            grid-column-gap: 10px;
+
+            > span {
+                font-size : 2vw;
+                color: white;
+            }
+            > div {
+                transition: 0.35s;
+            }
         }
     }
 }
