@@ -8,10 +8,15 @@ const Cover = () => {
     const nameLetters = [
         'M', 'i', 'h', 'a', 'i', 'l', '&nbsp;',
         'A', 'n', 'g', 'h', 'e', 'l', 'i', 'c', 'i'
-    ]
+    ];
     const selectionItems = [
-        "About","Projects", "Extra", "Contact"
-    ]
+        "Home", "About","Projects", "Extra", "Contact"
+    ];
+    const [selectedItem, setSelectedItem] = useState<number>(0);
+    const updateSelectedItem = (num: number) => {
+        setSelectedItem(num);
+    }
+
     return (
         <div className={styles.coverContainer} >
             <div className={styles.description} >
@@ -28,7 +33,8 @@ const Cover = () => {
             </div>
             <div className={styles.sideBar} >
                 {selectionItems.map((value, index) => (
-                    <SelectionItem name={value} index={index} />
+                    <SelectionItem name={value} index={index}
+                             update={updateSelectedItem} selectedItem={selectedItem}/>
                 ))}
             </div>
         </div>

@@ -18,7 +18,7 @@
             color: rgb(231, 231, 231);
             word-wrap: break-word;
             font-style: italic;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Perpetua', serif;
             font-size: 1.5vw;
             // margin-left:10%;
             vertical-align: middle;
@@ -29,13 +29,12 @@
         width: 15vw;
         height: 60vh;
         margin-top: 10%;
-        background-color:red;
+        background-color:black;
         display: grid;
         // grid-template-columns: 2fr 0.1fr;
         grid-template-columns: 2fr;
-        grid-template-rows: repeat(4, 0.5fr);
+        grid-template-rows: repeat(5, 0.5fr);
         grid-column-gap: 20px;
-        grid-row-gap: 20px;
         .selectionBox {
             display: grid;
             // grid-template-columns: 2fr 0.1fr;
@@ -43,8 +42,12 @@
             grid-column-gap: 10px;
 
             > span {
+                align-self: center;
+                padding-left: 10%;
                 font-size : 2vw;
                 color: white;
+                font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+                text-transform: uppercase;
             }
             > div {
                 transition: 0.35s;
@@ -57,9 +60,10 @@ li {
     display: inline-block;
     white-space: nowrap;
     list-style: none;
-    font-size: 7vw;
+    font-size: 5vw;
     color: rgb(231, 231, 231);
-    font-family: 'Perpetua', serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
 }
 
 ul {
