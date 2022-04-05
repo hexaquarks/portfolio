@@ -22,13 +22,14 @@ const Cover = () => {
             <div className={styles.description} >
                 <div className={styles.lettersContainer}>
                     <ul>
+                        <hr className={styles.titleRule} />
                         {nameLetters.map((value, index) => (
                             <TitleLetter name={value} index={index} />
                         ))}
                     </ul>
                 </div>
                 <h2>
-                    Software developer | Ches player | Physics enthousiast
+                    Software developer | Chess player | Physics enthousiast
                 </h2>
             </div>
             <div className={styles.sideBar} >

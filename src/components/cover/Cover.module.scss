@@ -10,8 +10,19 @@
         width: 50%;
         height: inherit;
         .lettersContainer {
+            position: relative;
             vertical-align: middle;
             margin: 0 auto;
+        }
+        .lettersContainer::before {
+            position: absolute;
+            content: '';
+            margin-top:20px;
+            top: -50px;
+            left: -40px;
+            height: 13vw;
+            width: 5px;
+            background-color: #ffa500;
         }
     
         h2 {
@@ -70,6 +81,12 @@ ul {
     padding: 0;
     display:inline-block;
     vertical-align:top;
+    hr {
+        border: 3px solid #ffa500;
+        width: 110%;
+        margin-left: -10%;
+        margin-bottom: 2%;
+    }
 }
 
 .rotate {
