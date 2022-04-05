@@ -7,8 +7,7 @@
     .description {
         margin-left:10%;
         margin-top:10%;
-        display: inlin-block;
-        width: 40%;
+        width: 50%;
         height: inherit;
         .lettersContainer {
             vertical-align: middle;
@@ -20,18 +19,27 @@
             word-wrap: break-word;
             font-style: italic;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.5vw;
             // margin-left:10%;
             vertical-align: middle;
         }
     }
 
     .sideBar {
-        width: 40vh;
+        width: 15vw;
         height: 60vh;
         margin-top: 10%;
         background-color:red;
-
+        display: grid;
+        grid-template-columns: 2fr 0.1fr;
+        grid-template-rows: repeat(4, 0.5fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        > div {
+            font-size : 2vw;
+            color: white;
+            transition: 0.25s;
+        }
     }
 }
 
@@ -39,7 +47,7 @@ li {
     display: inline-block;
     white-space: nowrap;
     list-style: none;
-    font-size: 10rem;
+    font-size: 7vw;
     color: rgb(231, 231, 231);
     font-family: 'Perpetua', serif;
 }
