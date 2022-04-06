@@ -1,30 +1,17 @@
-import downArrow from '../../assets/down_arrow.png';
 import { useState } from 'react';
-import Fade from '@material-ui/core/Fade';
 import DropDown from './DropDown';
 import { Element } from 'react-scroll'
-
-const styles = require('./About.module.scss');
-
-interface universityInformation {
-    title: string;
-    description: string;
-    year: string;
-    image: string;
-    coursework: {
-        course: string;
-        language: string;
-    }[];
-}
-const information : universityInformation[] = require('./UniversityInformation');
+import information from './UniversityInformation' 
+import styles from './About.module.scss'
 
 const About = () => {
+    console.log(information)
     const [selected, setSelected] = useState<any>(null);
 
     return (
         <Element id="aboutDiv" name="aboutDiv">
             <div className={styles.container}>
-                <div className={styles.rightParagraph}>
+                <div className={styles.education}>
                     <h2>
                         Education
                     </h2>
@@ -33,7 +20,7 @@ const About = () => {
                         {information.map((value : any, index : number) => (
                             <DropDown information={information} index={index}
                                 onClick={() => setSelected(
-                                    (s : universityInformation) => s === value ? null : value)
+                                    (s : any) => s === value ? null : value)
                                 } 
                                 selected={selected === value} key={value} />
                         ))}

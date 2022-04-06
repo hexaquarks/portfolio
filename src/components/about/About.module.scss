@@ -1,17 +1,140 @@
 .container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > div {
+        margin: 0 auto;
+        position:relative;
+        left:25px;
+        margin-top: 55px;
+        height: 250px;   
+        color: white;
+    }
+
     .education {
-        h2 {
+        width: 800px; 
+        margin-left: 20%;
+        margin-right: 20%;
 
-        }
-        hr {
-
-        }
-        p {
-            .dropDown {
-                .descriptionPanel {
-                    
-                }
-            }
+        & > p {
+            display: grid;
+            grid-template-columns: 50px 50px 650px;
+            row-gap: 10px;
         }
     }
+    & > div > h2 {
+        width: 8ch;
+        font-family: 'Playfair Display', serif;
+        font-size: 35px;
+        background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+    
+        transition: background-position 500ms ease;
+    }
+
+    & > div > h2:hover { background-position: 0 100%; }
+
+    // & > div > p {
+    //     font-family: 'Playfair Display', serif;
+    //     font-size: 147%;
+
+    //     &::first-letter {
+    //         color: #c69c6d;
+    //         float: left;
+    //         font-size: 2.9em;
+    //         margin: -0.2em .2em -0.3em 0;
+    //     }
+    // }
 }
+
+hr {
+    position:relative;
+    margin-top: -20px;
+    width: 75%;
+    margin-right: 25%;
+}
+
+.dropDownArrow {
+    align-self: center;
+    margin: 0 auto;
+}
+.dropArrow {
+    position: relative;
+    transition: .25s;
+    z-index: 900 !important;
+
+    &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0px 0px 8px rgb(223, 123, 77));
+    }
+}
+
+.decriptionPanel {
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: aliceblue;
+    border: 10px solid rgba(255, 255, 255, 0.822);
+    color: black;
+    box-shadow: 2px 3px 30px 9px rgba(255, 255, 255, 0.25);
+
+    border-radius: 10px 10px 10px 10px;
+    transition: 1s;
+    z-index: 999 !important;
+
+    i {
+        color: #cc893d;
+        font-weight: 600;
+    }
+}
+
+
+fieldset {
+    border: 2px solid #000;
+    height: auto;
+    margin:auto;
+    margin-top: -10px;
+}
+legend {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.coursesList {
+    justify-content: center;
+    margin-top: -25px;
+    margin-bottom: -20px;
+
+    & > ul {
+        line-height: 24px;
+        font-size: 19px;
+    }
+}
+
+.doRotate {
+    position:relative;
+    transition: 1s;
+    animation-fill-mode: forwards !important;
+    animation: rotate 1s;
+}
+
+i {
+    font-family: 'Lucida Sans', serif;
+    font-size: 16px;
+}
+
+span { font-family: 'Trebuchet', serif; }
+
+[alt~="mcgillIcon"]:hover,
+[alt~="bdebIcon"]:hover {
+    transform: scale(1.25);
+}
+
+@keyframes rotate { 100% {transform: rotate(180deg);}}
