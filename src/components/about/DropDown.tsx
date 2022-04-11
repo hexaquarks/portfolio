@@ -30,7 +30,7 @@ const DropDown = (props : propsInterface) => {
         <React.Fragment>
             <div className={styles.dropDownArrow} >
                 <img className={selected ? `${styles.dropArrow} ${styles.doRotate}` : `${styles.dropArrow}`}
-                    src={downArrow} width="30" height="30"
+                    src={downArrow} width="70" height="70"
                     onClick={onClick}
                 >
                 </img>
@@ -57,9 +57,9 @@ const DropDown = (props : propsInterface) => {
             </div>
             <div>
                 <img src={information[index].image} 
-                    width={index === 2 ? '40' : '50'} 
-                    height={index === 2 ? '40' : '50'} 
-                    style={{marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '20px' : '0px'}}
+                    width={index === 2 ? '80' : '90'} 
+                    height={index === 2 ? '80' : '90'} 
+                    style={{marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '10px' : '0px'}}
                     alt="mcgillIcon" />
             </div>
             <div >

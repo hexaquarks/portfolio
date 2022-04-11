@@ -3,10 +3,11 @@
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
 
     & > div {
-        margin: 0 auto;
+        // margin: 0 auto;
+        margin-left: 20%;
         position:relative;
         left:25px;
         margin-top: 55px;
@@ -15,14 +16,16 @@
     }
 
     .education {
-        width: 800px; 
-        margin-left: 20%;
-        margin-right: 20%;
+        width: 50%; 
 
         & > p {
             display: grid;
-            grid-template-columns: 50px 50px 650px;
-            row-gap: 10px;
+            // grid-template-columns: 2fr 0.1fr;
+            grid-template-columns: 0.5fr 0.5fr 6fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 4%;
+            row-gap: 20px;
+            font-size: 1.75rem;
         }
     }
     & > div > h2 {
@@ -127,10 +130,13 @@ legend {
 
 i {
     font-family: 'Lucida Sans', serif;
-    font-size: 16px;
+    font-size: 1.25rem;
 }
 
-span { font-family: 'Trebuchet', serif; }
+span { 
+    font-family: 'Trebuchet', serif; 
+    font-size: 1.6rem;
+}
 
 [alt~="mcgillIcon"]:hover,
 [alt~="bdebIcon"]:hover {
