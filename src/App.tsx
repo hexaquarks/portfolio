@@ -10,6 +10,9 @@ function App() {
         <Cover />
       </div>
       <div className="secondPage"> 
+        <div className="firstSection">
+          <h3>About Me</h3>
+        </div>
         <About />
       </div>
     </div>
