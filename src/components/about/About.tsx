@@ -9,25 +9,40 @@ const About = () => {
     const [selected, setSelected] = useState<any>(null);
 
     return (
-        <Element id="aboutDiv" name="aboutDiv">
-            <div className={styles.container}>
-                <div className={styles.education}>
-                    <h2>
-                        Education
-                    </h2>
-                    <hr />
-                    <p>
-                        {information.map((value : any, index : number) => (
-                            <DropDown information={information} index={index}
-                                onClick={() => setSelected(
-                                    (s : any) => s === value ? null : value)
-                                } 
-                                selected={selected === value} key={value} />
-                        ))}
-                    </p>
+        <div className={styles.aboutGrid}>
+            {/* <h2 className={styles.generalDescription}>
+
+            </h2> */}
+            <Element id={styles.aboutDiv} name="aboutDiv">
+                <div className={styles.container}>
+                    <div className={styles.education}>
+                        <h2>
+                            Education
+                        </h2>
+                        <hr />
+                        <p>
+                            {information.map((value : any, index : number) => (
+                                <DropDown information={information} index={index}
+                                    onClick={() => setSelected(
+                                        (s : any) => s === value ? null : value)
+                                    } 
+                                    selected={selected === value} key={value} />
+                            ))}
+                        </p>
+                    </div>
                 </div>
+            </Element>
+            <h2 className={styles.educationDescription}>
+                                testing
+            </h2>
+            <h2 className={styles.latexDescription}>
+                                    testing
+            </h2>
+            <div className={styles.latexContainer}>
+                        testing
             </div>
-        </Element>
+
+        </div>
     );
 }
 
