@@ -1,7 +1,7 @@
 import React from 'react';
 import Cover from './components/cover/Cover';
 import About from './components/about/About';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
