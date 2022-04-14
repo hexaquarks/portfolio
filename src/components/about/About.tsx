@@ -10,9 +10,12 @@ const About = () => {
 
     return (
         <div className={styles.aboutGrid}>
-            {/* <h2 className={styles.generalDescription}>
-
-            </h2> */}
+            <span className={styles.descriptionHeader}>
+                Hello there, my name is Mihail Anghelici. I am a Software Developer 
+                based in Montreal. In my free time I like to train at chess, code, 
+                and take baths. I am proficient and have demonstratd experience
+                in C++, Java, Python, Typescript, React, SCSS, and more.
+            </span>
             <Element id={styles.aboutDiv} name="aboutDiv">
                 <div className={styles.container}>
                     <div className={styles.education}>
@@ -32,12 +35,21 @@ const About = () => {
                     </div>
                 </div>
             </Element>
-            <h2 className={styles.educationDescription}>
-                                testing
-            </h2>
-            <h2 className={styles.latexDescription}>
-                                    testing
-            </h2>
+            <span className={styles.educationDescription}>
+                I started my academic jurney as a Honors Physics undergraduate. 
+                I was set on pursuing a carreer in particle physics, but realized
+                overtime that software engineering is the real thing ;). Since I 
+                still enjoy physics nevertheless, I decided to pursue a major in
+                Physics and Computer Science at McGill University, where I will be 
+                graduating in December 2022.
+            </span>
+            <span className={styles.latexDescription}>
+                I am big fanatic of LaTeX text editor. I have take notes in real-time 
+                on it for most of my classes at McGill and did all my school work
+                papers with it. My most notable project is the Notes for MATH 314 (
+                    Advanced Calculus), a document that was featured to the class by 
+                my teacher.
+            </span>
             <div className={styles.latexContainer}>
                         testing
             </div>
