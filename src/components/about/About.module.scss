@@ -3,8 +3,8 @@
     margin-left: 5%;
     padding-top: 100px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 0.3fr repeat(2, 1fr);
+    grid-template-columns: 1.5fr 0.5fr 0.8fr 1.2fr;
+    grid-template-rows: 0.3fr 1fr 0.4fr;
     grid-column-gap: 20px;
     grid-row-gap: 40px;
      
@@ -86,9 +86,11 @@
         grid-area: 3 / 1 / 4 / 3;
     }
     .latexContainer {
+        padding-top: 5%;
+        padding-left: 20%;
         grid-area: 3 / 3 / 4 / 5;
-        background-color: white;
     }
+
     hr {
         position:relative;
         margin-top: -20px;

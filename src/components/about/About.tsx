@@ -3,6 +3,8 @@ import DropDown from './DropDown';
 import { Element } from 'react-scroll'
 import information from './UniversityInformation' 
 import styles from './About.module.scss'
+import stylesLatex from './latex/LatexFolders.module.scss'
+import LatexFolders from './latex/LatexFolders'
 
 const About = () => {
     console.log(information)
@@ -51,9 +53,10 @@ const About = () => {
                 my teacher.
             </span>
             <div className={styles.latexContainer}>
-                        testing
+                <div className={stylesLatex.latexContainer}>
+                    <LatexFolders />
+                </div>
             </div>
-
         </div>
     );
 }
