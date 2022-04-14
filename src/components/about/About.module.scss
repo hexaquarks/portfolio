@@ -150,10 +150,18 @@ legend {
     justify-content: center;
     margin-top: -25px;
     margin-bottom: -20px;
+    margin-left: 30px;
 
     & > ul {
         line-height: 24px;
         font-size: 19px;
+        li {
+            font-size: 1.5rem;
+            display: list-item;
+            list-style: disc;
+            text-transform: none;
+            color: black;
+        }
     }
 }
 
