@@ -1,0 +1,217 @@
+
+.container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 190px;
+    padding: 50px 0px 125px 0px; 
+    background-color: rgb(231, 231, 231);
+    justify-content: center; 
+    overflow: hidden;
+
+    &:before { 
+      width: 200px;
+      height: 50px;
+      right: 0px;
+      margin-top: -60px;
+      padding: 0px 0px 0px -40px;
+      background-color:  #100c08;
+      content: ". . .    Projects";
+      font-weight: 600;
+      font-size: 33px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    &:after {
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent; 
+      
+      border-left: 45px solid rgb(231, 231, 231);
+      position: absolute;
+      right: 155px;
+      margin-top: -60px;
+      background-color:  #100c08;
+      content: '';
+    }
+
+    &:before , &:after { 
+      position: absolute;
+      color: rgb(231, 231, 231);
+
+      -webkit-animation-name: containerFadeIn;
+          animation-name: containerFadeIn;
+          animation-duration: 0.75s;
+    }
+
+    img:hover { transform: scale(1.25); }
+
+
+    .firstProjectGif {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        top: 40px;
+        margin: 0 auto;
+    
+        transform-style: preserve-3d;
+        box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        margin-left: 7%;
+        margin-right: 7%;
+    
+        animation-duration: 0.75s;
+    
+        &:before { 
+          position: absolute;
+          width: 600px;
+          height: 50px;
+          content: 'Particle Geometry Simulator';
+          top: -50px;
+          left: 0px;
+          font-size: 35px;
+          font-family: 'Playfair Display', serif;
+      
+          color: #f35626;
+          background-image: -webkit-linear-gradient(92deg, #ec3a04, #f0ba0a);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: colorGradient 10s infinite linear;
+        }
+        
+    }
+    .firstProjectPicture{
+        width: inherit;
+        height: inherit; 
+        background-image: url('../../assets/gifTry6.gif');
+        background-size: 100% 100%;   
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    
+        animation-duration: 0.75s;
+        transition: all 0.5s ease-out;
+        border: black solid 3px;
+    }
+    
+    .firstProjectDescription {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        top: 40px;
+        right: 40px;
+        transform: translateZ(-10px);
+        cursor: pointer;
+        box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.81);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    
+        transition: all 0.5s ease-in;
+        background-color: #100c08;
+    
+        &:before {
+          position: absolute;
+          width:300px;
+          height: 40px;
+          background-color:coral;
+          box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+          content: 'Description';
+          padding-left: 25px;
+          font-size: 24px;
+          font-family: 'Playfair Display', serif;
+          color: rgb(44, 34, 34);
+          left:-20px;
+          top:20px;
+        }
+        
+        &:after {
+          position: absolute;
+          content: '';
+          left:-20px;
+          top:60px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 20px 20px 0;
+          border-color: transparent #74240c transparent transparent;
+        }
+    
+        & > p {
+          float:left;
+          color: aliceblue;
+          font-size: 18px;
+          margin: 70px 10px 0px 20px;
+          font-family: 'Times New Roman';
+        }
+        & > h6 {
+          position: absolute;
+          content: "";
+          width: 30px; height: 30px;
+          cursor: pointer;
+          left: 265px;
+          animation: breath 2s linear infinite;
+    
+        }
+    
+        & > span {
+          position: absolute;
+          top: 245px;
+          right:-20px;
+        }
+        & > span:before {
+          position: relative;
+          width:260px;
+          height: 40px;
+          display: flex;
+          justify-content: flex-end;
+        
+          background-color:coral;
+          box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+          content: 'Technologies';
+          padding-right: 40px;
+          font-size: 24px;
+          font-family: 'Playfair Display', serif;
+          color: rgb(44, 34, 34);
+        }
+    
+        & > span:after {
+          position: absolute;
+          content: '';
+          right: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 20px 20px 0 0;
+          border-color: #74240c transparent transparent transparent;
+        }
+    
+        & > div {
+          position: absolute;
+          top: 300px;
+          left: 20px;
+          display: grid; 
+          grid-template-columns: 50px 150px 50px 150px; 
+          grid-template-rows: 50px 50px; 
+          gap: 0px 0px; 
+          grid-template-areas: 
+            ". . . ."
+            ". . . ."; 
+          color: aliceblue;
+    
+          & > span {
+            margin: 10px 0px 0px 5px; 
+            font-weight: 600;
+          }
+        }
+    
+    }
+    
+    .firstProjectDescription[animate='1'] {
+        animation: opacityDown 0.75s 1;
+    }
+    
+}
+  
