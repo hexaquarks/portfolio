@@ -8,16 +8,19 @@ const SelectionItem = (props : {name: string, index: number, update: (num :numbe
     const [animating, setAnimating] = useState<boolean>(false);
 
     return (
-        <div className={styles.selectionBox}
-            onMouseEnter={() => {  setAnimating(true); }}
-            onClick={() => { update(index) }}
-            onMouseLeave={() => { setAnimating(false); }}>
-            <span >
+        <div className   ={styles.selectionBox}
+             onMouseEnter={() => { setAnimating(true); }}
+             onClick     ={() => { update(index); }}
+             onMouseLeave={() => { setAnimating(false); }}>
+            <span>
                 { name }
             </span>
-            <div style={{backgroundColor: selectedItem == index 
+            <div style={
+                {backgroundColor: selectedItem == index 
                         ? "#ffa500" 
-                        : animating ? "rgba(255,165,0,0.35)" : "black"}} > 
+                        : animating ? "rgba(255,165,0,0.35)" : "black"
+                }
+            }> 
             </div>
         </div>
     )

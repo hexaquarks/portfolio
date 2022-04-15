@@ -8,9 +8,9 @@ const TitleLetter = (props : {name: string, index: number}) => {
     const [animating, setAnimating] = useState<boolean>(false);
 
     return (
-        <li className={animating ? `${styles.rotate}` : ''}
-            onMouseEnter={() => { setAnimating(true); }}
-            onAnimationEnd={() => { setAnimating(false); }}
+        <li className     ={ animating ? `${styles.rotate}` : ''}
+            onMouseEnter  ={ () => { setAnimating(true); }}
+            onAnimationEnd={ () => { setAnimating(false); }}
         > 
           {index === 6 ? String.fromCharCode(160) : name}
         </li>

@@ -38,8 +38,11 @@ const Cover = () => {
                 </div>
                 <div className={styles.sideBarSelection} >
                     {selectionItems.map((value, index) => (
-                        <SelectionItem name={value} index={index}
-                                update={updateSelectedItem} selectedItem={selectedItem}/>
+                        <SelectionItem name        ={value} 
+                                       index       ={index}
+                                       update      ={updateSelectedItem} 
+                                       selectedItem={selectedItem}
+                        />
                     ))}
                 </div>
             </div>

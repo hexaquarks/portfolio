@@ -29,15 +29,18 @@ const DropDown = (props : propsInterface) => {
     return (
         <React.Fragment>
             <div className={styles.dropDownArrow} >
-                <img className={selected ? `${styles.dropArrow} ${styles.doRotate}` : `${styles.dropArrow}`}
-                    src={downArrow} width="60" height="60"
-                    onClick={onClick}
+                <img className={ selected 
+                        ? `${styles.dropArrow} ${styles.doRotate}` 
+                        : `${styles.dropArrow}`
+                }
+                     src      ={ downArrow } width="60" height="60"
+                     onClick  ={ onClick }
                 >
                 </img>
                 <Fade in={selected}>
                     <div className={styles.decriptionPanel}>
                         <fieldset>
-                            <legend>Relevent Coursework</legend>
+                            <legend> Relevent Coursework </legend>
                             <div className={styles.coursesList} >
                                 <ul>
                                     {information[index].coursework.map((value, index) => (
@@ -56,11 +59,12 @@ const DropDown = (props : propsInterface) => {
                 </Fade>
             </div>
             <div>
-                <img src={information[index].image} 
-                    width={index === 2 ? '75' : '90'} 
-                    height={index === 2 ? '75' : '90'} 
-                    style={{marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '10px' : '0px'}}
-                    alt="mcgillIcon" />
+                <img src   ={ information[index].image } 
+                     width ={ index === 2 ? '75' : '90' } 
+                     height={ index === 2 ? '75' : '90' } 
+                     style ={ {marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '10px' : '0px'} }
+                     alt   ="mcgillIcon" 
+                />
             </div>
             <div >
                 <b>{information[index].title}</b> &#8213; <span>{information[index].description}</span> <br /> <i>{information[index].year}</i>
