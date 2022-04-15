@@ -28,7 +28,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     margin:0 auto;
 }
 
-.firstSection {
+.firstSection, .secondSection{
     position: absolute;
     top: -40px;
     left: 15%;
@@ -44,6 +44,14 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     width: 100%;
     height: 100vh;
     background-color: #100c08;
+    margin:0 auto;
+}
+
+.thirdPage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
     margin:0 auto;
 }
 

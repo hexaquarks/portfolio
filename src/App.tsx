@@ -15,6 +15,11 @@ function App() {
         </div>
         <About />
       </div>
+      <div className="thirdPage"> 
+        <div className="secondSection">
+          <h3>Projects</h3>
+        </div>
+      </div>
     </div>
   );
 }
