@@ -1,6 +1,7 @@
 import React from 'react';
 import Cover from './components/cover/Cover';
 import About from './components/about/About';
+import Projects from './components/projects/Projects';
 import './App.scss';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <div className="secondSection">
           <h3>Projects</h3>
         </div>
+        <Projects />
       </div>
     </div>
   );
