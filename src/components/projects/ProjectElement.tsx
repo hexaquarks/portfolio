@@ -19,11 +19,6 @@ interface propsInterface {
 
 const ProjectElement = (props : propsInterface) => {
     const { link, gifPath, index } = props;
-
-    // const projectLinks = [
-    //     'https://github.com/hexaquarks/Particle_Fun',
-    //     'https://hexaquarks.github.io/Weather_App/#/'
-    // ]
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         pictureLeft: 'top',
@@ -80,7 +75,7 @@ const ProjectElement = (props : propsInterface) => {
                     onClick  ={() => { changePicture('top', 'left') }}
                     style    ={{ opacity: topOpacity, 
                                  cursor: setStyle('top', 'cursor'),
-                                 backgroundImage: gifPath
+                                 backgroundImage: `url(${gifPath})`
                     }}>
             </div>
             <div className={styles.projectDescription}
