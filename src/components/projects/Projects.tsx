@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { Element } from 'react-scroll';
 import ProjectElement from './ProjectElement';
 import styles from './Projects.module.scss';
+import particleFunGif from '../../assets/gifTry6.gif';
+import weatherGif from '../../assets/gifWeatherTry3.gif';
 
 const Projects = () => {
     const projectProps = [
         {
             projectLink: "https://github.com/hexaquarks/Particle_Fun",
-            gifPath: "../../assets/gifTry6.gif"
         },
         {
             projectLink: "https://hexaquarks.github.io/Weather_App/#/",
-            gifPath: "../../assets/gifWeatherTry3.gif"
         }
     ]
     // const projectLinks = [
@@ -23,7 +23,6 @@ const Projects = () => {
         <div className={styles.container}>
             {projectProps.map((value : any, index : number) => (
                 <ProjectElement link={value.projectLink}
-                                gifPath={value.gifPath}
                                 index={index}
                     // onClick={() => setSelected(
                     //     (s : any) => s === value ? null : value)

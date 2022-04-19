@@ -9,16 +9,18 @@ import javascriptIcon from '../../assets/javascript_icon_2.png';
 import htmlIcon from '../../assets/html_icon.png';
 import reactIcon from '../../assets/react_icon.png';
 import githubIcon from '../../assets/githubBlack.png';
+import particleFunGif from '../../assets/gifTry6.gif';
+import weatherGif from '../../assets/gifWeatherTry3.gif';
 import { url } from 'inspector';
 
 interface propsInterface { 
     link: string,
-    gifPath: string,
     index: number
 };
 
 const ProjectElement = (props : propsInterface) => {
-    const { link, gifPath, index } = props;
+    const { link, index } = props;
+    const gifs = [particleFunGif, weatherGif];
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         pictureLeft: 'top',
@@ -75,7 +77,7 @@ const ProjectElement = (props : propsInterface) => {
                     onClick  ={() => { changePicture('top', 'left') }}
                     style    ={{ opacity: topOpacity, 
                                  cursor: setStyle('top', 'cursor'),
-                                 backgroundImage: `url(${gifPath})`
+                                 backgroundImage: `url(${gifs[index]})`
                     }}>
             </div>
             <div className={styles.projectDescription}
