@@ -16,12 +16,13 @@ import { url } from 'inspector';
 
 interface propsInterface { 
     link: string,
+    title: string,
     index: number
 };
 
 const ProjectElement = (props : propsInterface) => {
-    const { link, index } = props;
-    const gifs = [particleFunGif, weatherGif, chessGif];
+    const { link, title, index } = props;
+    const gifs = [chessGif,particleFunGif, weatherGif];
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         pictureLeft: 'top',
@@ -73,7 +74,9 @@ const ProjectElement = (props : propsInterface) => {
     return (
         <div className={styles.projectGif}
                 style    ={{ transformStyle: 'preserve-3d' }}>
-
+            <span className={styles.title} >
+                {title}
+            </span>
             <div className={styles.projectPicture}
                     onClick  ={() => { changePicture('top', 'left') }}
                     style    ={{ opacity: topOpacity, 

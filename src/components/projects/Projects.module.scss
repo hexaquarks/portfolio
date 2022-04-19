@@ -3,10 +3,8 @@
     width: 60%;
     height: 100%;
     display: grid;
-    // margin: 10% 10% 10% 10%;
     padding-top: 10%;
     padding-right: 10%;
-    // grid-template-columns: 1.0fr 1.0fr;
     display: grid;
     grid-template-columns: repeat(auto-fill,
            minmax(max(200px,(750px - (2 - 1)*150px)/2), 1fr));
@@ -17,6 +15,7 @@
     img:hover { transform: scale(1.25); }
 
     .projectGif {
+        position: relative;
         width: 100%;
         height: 100%;
         max-width: 375px;
@@ -31,12 +30,10 @@
         margin-right: 7%;
     
         animation-duration: 0.75s;
-    
-        &:before { 
+        .title {
           position: absolute;
           width: 600px;
           height: 50px;
-          content: 'Particle Geometry Simulator';
           top: -50px;
           left: 0px;
           font-size: 35px;
