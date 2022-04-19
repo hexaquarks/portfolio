@@ -74,6 +74,7 @@ const ProjectElement = (props : propsInterface) => {
     return (
         <div className={styles.projectGif}
                 style    ={{ transformStyle: 'preserve-3d' }}>
+            <div className={styles.colorLayer}/>
             <span className={styles.title} >
                 {title}
             </span>
