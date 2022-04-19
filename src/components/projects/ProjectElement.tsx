@@ -11,6 +11,7 @@ import reactIcon from '../../assets/react_icon.png';
 import githubIcon from '../../assets/githubBlack.png';
 import particleFunGif from '../../assets/gifTry6.gif';
 import weatherGif from '../../assets/gifWeatherTry3.gif';
+import chessGif from '../../assets/ChessGamePromotionTraversal.gif'
 import { url } from 'inspector';
 
 interface propsInterface { 
@@ -20,7 +21,7 @@ interface propsInterface {
 
 const ProjectElement = (props : propsInterface) => {
     const { link, index } = props;
-    const gifs = [particleFunGif, weatherGif];
+    const gifs = [particleFunGif, weatherGif, chessGif];
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         pictureLeft: 'top',

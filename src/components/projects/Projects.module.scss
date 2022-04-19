@@ -1,21 +1,21 @@
 
 .container {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 190px;
-    padding: 50px 0px 125px 0px; 
-    justify-content: center; 
-    overflow: hidden;
+    width: 60%;
+    height: 100%;
+    display: grid;
+    // margin: 10% 10% 10% 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-column-gap: 20%;
+    grid-row-gap: 20%;
+    justify-content: center;
 
     img:hover { transform: scale(1.25); }
 
     .projectGif {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        top: 40px;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
     
         transform-style: preserve-3d;
@@ -62,8 +62,8 @@
     
     .projectDescription {
         position: absolute;
-        width: 400px;
-        height: 400px;
+        width: inherit;
+        height: inherit;
         top: 40px;
         right: 40px;
         transform: translateZ(-10px);

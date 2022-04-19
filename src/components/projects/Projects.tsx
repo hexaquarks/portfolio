@@ -12,6 +12,9 @@ const Projects = () => {
         },
         {
             projectLink: "https://hexaquarks.github.io/Weather_App/#/",
+        },
+        {
+            projectLink: "https://github.com/hexaquarks/chess_game"
         }
     ]
     // const projectLinks = [
