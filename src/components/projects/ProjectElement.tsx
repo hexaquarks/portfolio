@@ -75,10 +75,10 @@ const ProjectElement = (props : propsInterface) => {
     return (
         <div className={styles.projectGif}
                 style    ={{ transformStyle: 'preserve-3d' }}>
-            {/* <div className={styles.colorLayer}/>
+            {/* <div className={styles.colorLayer}/> */}
             <span className={styles.title} >
                 {title}
-            </span> */}
+            </span>
             <div className={styles.projectPicture}
                     onClick  ={() => { changePicture('top') }}
                     style    ={{ opacity: topOpacity, 
