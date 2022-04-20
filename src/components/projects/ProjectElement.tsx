@@ -17,15 +17,16 @@ import { url } from 'inspector';
 interface propsInterface { 
     link: string,
     title: string,
+    description: string,
     index: number
 };
 
 const ProjectElement = (props : propsInterface) => {
-    const { link, title, index } = props;
+    const { link, title, description, index } = props;
     const gifs = [chessGif,particleFunGif, weatherGif];
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
-        pictureLeft: 'top',
+        topPicture: 'top',
         topStyle: 'preserve-3d',
         bottomStyle: 'translateZ(-10px)',
         topOpacity: '100%',
@@ -49,7 +50,7 @@ const ProjectElement = (props : propsInterface) => {
         if (newWindow) newWindow.opener = null
       }
 
-    const changePicture = (stack: string, direction: string) => {
+    const changePicture = (stack: string) => {
         if (stack === "top" && topPicture === "top") {
             openInNewTab(link);
         }
@@ -74,19 +75,19 @@ const ProjectElement = (props : propsInterface) => {
     return (
         <div className={styles.projectGif}
                 style    ={{ transformStyle: 'preserve-3d' }}>
-            <div className={styles.colorLayer}/>
+            {/* <div className={styles.colorLayer}/>
             <span className={styles.title} >
                 {title}
-            </span>
+            </span> */}
             <div className={styles.projectPicture}
-                    onClick  ={() => { changePicture('top', 'left') }}
+                    onClick  ={() => { changePicture('top') }}
                     style    ={{ opacity: topOpacity, 
                                  cursor: setStyle('top', 'cursor'),
                                  backgroundImage: `url(${gifs[index]})`
                     }}>
             </div>
             <div className={styles.projectDescription}
-                    onClick  ={() => { changePicture('bottom', 'left') }}
+                    onClick  ={() => { changePicture('bottom') }}
                     style    ={{ transform: bottomStyle,
                                 cursor: setStyle('bottom', 'cursor'),
                                 opacity: bottomOpacity
@@ -97,13 +98,8 @@ const ProjectElement = (props : propsInterface) => {
                         <img src={githubIcon} width="30" height="30" />
                     </a>
                 </h6>
-                <p> The program alows the user to add and remove particles with
-                    variable size. The program simulates gravitational force, 
-                    electrostatic force and allows for elastic collisions. Further,
-                    the dynamic quantity of particles can be arranged in shapes 
-                    such as: circle, square, diamond, spiral, loose spiral, 
-                    sunflower spiral. And finally, the shapes can then also be 
-                    divided and rotated.
+                <p> 
+                    { description }
                 </p>
                 <div className={styles.technologiesContainer}>
                     <img src   ={javaIcon} 

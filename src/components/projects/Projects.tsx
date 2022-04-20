@@ -9,15 +9,34 @@ const Projects = () => {
     const projectProps = [
         {
             projectLink: "https://github.com/hexaquarks/chess_game",
-            projectTitle: "Chess Game"
+            projectTitle: "Chess Game",
+            projectDescription: `
+                Fully functional chess game with respect to chess rules
+                with additional features such as : Move list traversal, 
+                menu options, mechanical utilities, N-Ary tree data 
+                struture for move tree generation, and more.`
         },
         {
             projectLink: "https://github.com/hexaquarks/Particle_Fun",
-            projectTitle: "Particle Simulation"
+            projectTitle: "Particle Simulation",
+            projectDescription: `
+                The program alows the user to add and remove particles with variable size. The program simulates gravitational force, 
+                electrostatic force and allows for elastic collisions. Further,
+                the dynamic quantity of particles can be arranged in shapes 
+                such as: circle, square, diamond, spiral, loose spiral, 
+                sunflower spiral. And finally, the shapes can then also be 
+                divided and rotated.`
         },
         {
             projectLink: "https://hexaquarks.github.io/Weather_App/#/",
-            projectTitle: "Weather Application"
+            projectTitle: "Weather Application",
+            projectDescription: `
+                The program fetches data from OpenWweatherMap API API and
+                displays the daily information overview and detailed 
+                information. Further, a 24 hours and 7 days forecast for 
+                temperature and precipitation, is displayed in a carousel 
+                container along with bar graphs respectively. 
+            `
         }
     ]
     // const projectLinks = [
@@ -30,6 +49,7 @@ const Projects = () => {
             {projectProps.map((value : any, index : number) => (
                 <ProjectElement link={value.projectLink}
                                 title={value.projectTitle}
+                                description={value.projectDescription}
                                 index={index}
                     // onClick={() => setSelected(
                     //     (s : any) => s === value ? null : value)
