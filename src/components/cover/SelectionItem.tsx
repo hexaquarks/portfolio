@@ -15,7 +15,8 @@ const SelectionItem = (props : {name: string, index: number, update: (num :numbe
             <span>
                 { name }
             </span>
-            <div style={
+            <div className={styles.selectionRectangle} 
+                 style    ={
                 {backgroundColor: selectedItem == index 
                         ? "#ffa500" 
                         : animating ? "rgba(255,165,0,0.35)" : "black"

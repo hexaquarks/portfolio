@@ -72,6 +72,9 @@
                     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
                     text-transform: uppercase;
                 }
+                .selectionRectangle { 
+                    border: rgb(18, 18, 18) solid 3px;
+                }
                 > div {
                     transition: 0.35s;
                 }
