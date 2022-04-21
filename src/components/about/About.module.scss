@@ -19,6 +19,7 @@
     span {
         font-size: 1.8rem;
         color: aliceblue;
+        // color: black;
     }    
 
     .container { 
@@ -56,7 +57,7 @@
         }
     
         & > div > h2 {
-            width: 8ch;
+            width: 10ch;
             font-family: 'Playfair Display', serif;
             font-size: 35px;
             background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
@@ -88,6 +89,10 @@
     }
     .latexDescription {
         grid-area: 3 / 1 / 4 / 3;
+    }
+
+    .descriptionHeader, .educationDescription, .latexDescription {
+        font-size: max(1vw, 1.5vw);
     }
     .latexContainer {
         background-color: black;

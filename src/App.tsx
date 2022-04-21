@@ -2,6 +2,9 @@ import React from 'react';
 import Cover from './components/cover/Cover';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
+import BottomNavbar from './components/navbars/BottomNavbar';
+
 import './App.scss';
 
 function App() {
@@ -21,6 +24,15 @@ function App() {
           <h3>Projects</h3>
         </div>
         <Projects />
+      </div>
+      <div className="fourthPage">
+          <div className="thirdSection" >
+            <h3>Contact</h3>
+          </div>
+        <Contact />
+      </div>
+      <div className="bottom">
+        <BottomNavbar />
       </div>
     </div>
   );
