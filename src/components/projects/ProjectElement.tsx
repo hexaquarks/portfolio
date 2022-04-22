@@ -12,17 +12,21 @@ import githubIcon from '../../assets/githubBlack.png';
 import particleFunGif from '../../assets/gifTry6.gif';
 import weatherGif from '../../assets/gifWeatherTry3.gif';
 import chessGif from '../../assets/ChessGamePromotionTraversal.gif'
+import knightIcon from '../../assets/knightIcon.png';
+import atomIcon from '../../assets/atomIcon.png'
+import weatherIcon from '../../assets/weatherIcon.png'
 import { url } from 'inspector';
 
 interface propsInterface { 
     link: string,
     title: string,
     description: string,
+    iconPath: string,
     index: number
 };
 
 const ProjectElement = (props : propsInterface) => {
-    const { link, title, description, index } = props;
+    const { link, title, description, iconPath, index } = props;
     const gifs = [chessGif,particleFunGif, weatherGif];
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
@@ -32,6 +36,7 @@ const ProjectElement = (props : propsInterface) => {
         topOpacity: '100%',
         bottomOpacity: '50%'
     });
+    const iconPaths = [knightIcon, atomIcon, weatherIcon];
 
     const [showProject, setShowProject] = useState<Boolean>(false);
 
@@ -86,7 +91,7 @@ const ProjectElement = (props : propsInterface) => {
                  onMouseLeave={() => setShowProject(false)}
                  style       ={{ opacity: topOpacity, 
                                   cursor: setStyle('top', 'cursor'),
-                         backgroundColor: 'orange',
+                         backgroundImage: `url(${iconPaths[index]})`
                 }}>
                     <img src  ={gifs[index]} 
                          style={{opacity: showProject ? '1' : '0'}}/>

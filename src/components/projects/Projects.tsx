@@ -14,7 +14,8 @@ const Projects = () => {
                 Fully functional chess game with respect to chess rules
                 with additional features such as : Move list traversal, 
                 menu options, mechanical utilities, N-Ary tree data 
-                struture for move tree generation, and more.`
+                struture for move tree generation, and more.`,
+            projectPlaceholder: "../../assets/knightIcon.png"
         },
         {
             projectLink: "https://github.com/hexaquarks/Particle_Fun",
@@ -25,7 +26,8 @@ const Projects = () => {
                 the dynamic quantity of particles can be arranged in shapes 
                 such as: circle, square, diamond, spiral, loose spiral, 
                 sunflower spiral. And finally, the shapes can then also be 
-                divided and rotated.`
+                divided and rotated.`,
+                projectPlaceholder: "../../assets/atomIcon.png"
         },
         {
             projectLink: "https://hexaquarks.github.io/Weather_App/#/",
@@ -35,14 +37,10 @@ const Projects = () => {
                 displays the daily information overview and detailed 
                 information. Further, a 24 hours and 7 days forecast for 
                 temperature and precipitation, is displayed in a carousel 
-                container along with bar graphs respectively. 
-            `
+                container along with bar graphs respectively.`,
+            projectPlaceholder: "../../assets/weatherIcon.png"
         }
     ]
-    // const projectLinks = [
-    //     'https://github.com/hexaquarks/Particle_Fun',
-    //     'https://hexaquarks.github.io/Weather_App/#/'
-    // ];
     
     return (
         <Element id="ProjectsScrollSection" name="ProjectsScrollSection">
@@ -51,6 +49,7 @@ const Projects = () => {
                     <ProjectElement link={value.projectLink}
                                     title={value.projectTitle}
                                     description={value.projectDescription}
+                                    iconPath={value.projectPlaceholder}
                                     index={index}
                                     key={value} />
                 ))}
