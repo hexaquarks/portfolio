@@ -77,7 +77,6 @@ const ProjectElement = (props : propsInterface) => {
     return (
         <div className={styles.projectGif}
                 style    ={{ transformStyle: 'preserve-3d' }}>
-            {/* <div className={styles.colorLayer}/> */}
             <span className={styles.title} >
                 {title}
             </span>
@@ -87,10 +86,11 @@ const ProjectElement = (props : propsInterface) => {
                  onMouseLeave={() => setShowProject(false)}
                  style       ={{ opacity: topOpacity, 
                                   cursor: setStyle('top', 'cursor'),
-                         backgroundImage: showProject ? `url(${gifs[index]})` : `none`,
                          backgroundColor: 'orange',
-                         transition: showProject ? 'opacity 0.5s' : 'opacity 0.5s'
                 }}>
+                    <img src  ={gifs[index]} 
+                         style={{opacity: showProject ? '1' : '0'}}/>
+
                 {/* <div className   ={styles.projectHider}
                      onMouseEnter={() => setShowProject(true)}
                      onMouseLeave={() => setShowProject(false)}
