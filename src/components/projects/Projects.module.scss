@@ -53,6 +53,7 @@
     }
 
     .projectPicture{
+        position: relative;
         width: inherit;
         height: inherit; 
         // background-image: url('../../assets/gifTry6.gif');
@@ -64,6 +65,17 @@
         animation-duration: 0.75s;
         transition: all 0.5s ease-out;
         border: black solid 3px;
+
+        .projectHider {
+          position: absolute;
+          left: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-size : 100% 100%;
+          border-radius: 10px;
+          background-color: rgba(208, 139, 12, 0.797);
+        } 
     }
 
     .projectPicture::after {

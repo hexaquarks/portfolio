@@ -45,19 +45,17 @@ const Projects = () => {
     // ];
     
     return (
-        <div className={styles.container}>
-            {projectProps.map((value : any, index : number) => (
-                <ProjectElement link={value.projectLink}
-                                title={value.projectTitle}
-                                description={value.projectDescription}
-                                index={index}
-                    // onClick={() => setSelected(
-                    //     (s : any) => s === value ? null : value)
-                    // } 
-                    // selected={selected === value} 
-                    key={value} />
-            ))}
-        </div>
+        <Element id="ProjectsScrollSection" name="ProjectsScrollSection">
+            <div className={styles.container}>
+                {projectProps.map((value : any, index : number) => (
+                    <ProjectElement link={value.projectLink}
+                                    title={value.projectTitle}
+                                    description={value.projectDescription}
+                                    index={index}
+                                    key={value} />
+                ))}
+            </div>
+        </Element>
     );
 }
 

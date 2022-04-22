@@ -33,6 +33,8 @@ const ProjectElement = (props : propsInterface) => {
         bottomOpacity: '50%'
     });
 
+    const [showProject, setShowProject] = useState<Boolean>(false);
+
     const setStyle = (stack : string, type : string) => {
         let option = (type === 'cursor')
             ? { first : 'alias' , second : 'pointer', third: 'default'}
@@ -79,12 +81,17 @@ const ProjectElement = (props : propsInterface) => {
             <span className={styles.title} >
                 {title}
             </span>
-            <div className={styles.projectPicture}
-                    onClick  ={() => { changePicture('top') }}
-                    style    ={{ opacity: topOpacity, 
-                                 cursor: setStyle('top', 'cursor'),
-                                 backgroundImage: `url(${gifs[index]})`
-                    }}>
+            <div className   ={styles.projectPicture}
+                 onClick     ={() => { changePicture('top') }}
+                 style       ={{ opacity: topOpacity, 
+                                  cursor: setStyle('top', 'cursor'),
+                         backgroundImage: `url(${gifs[index]})`,
+                }}>
+                {/* <div className   ={styles.projectHider}
+                     onMouseEnter={() => setShowProject(true)}
+                     onMouseLeave={() => setShowProject(false)}
+                     style       ={{display: showProject ? `none` : `initial`}}>
+                </div> */}
             </div>
             <div className={styles.projectDescription}
                     onClick  ={() => { changePicture('bottom') }}
