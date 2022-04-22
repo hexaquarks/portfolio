@@ -83,9 +83,13 @@ const ProjectElement = (props : propsInterface) => {
             </span>
             <div className   ={styles.projectPicture}
                  onClick     ={() => { changePicture('top') }}
+                 onMouseEnter={() => setShowProject(true)}
+                 onMouseLeave={() => setShowProject(false)}
                  style       ={{ opacity: topOpacity, 
                                   cursor: setStyle('top', 'cursor'),
-                         backgroundImage: `url(${gifs[index]})`,
+                         backgroundImage: showProject ? `url(${gifs[index]})` : `none`,
+                         backgroundColor: 'orange',
+                         transition: showProject ? 'opacity 0.5s' : 'opacity 0.5s'
                 }}>
                 {/* <div className   ={styles.projectHider}
                      onMouseEnter={() => setShowProject(true)}
