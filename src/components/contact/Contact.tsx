@@ -40,10 +40,10 @@ const Contact = () => {
         <Element id="ContactScrollSection" name="ContactScrollSection">
             <form onSubmit={handleSubmit} >
                 <div className={styles.container}>
-                    <div className={styles.header}>
+                    {/* <div className={styles.header}>
                         <img src={informationIcon} />
                         <h1> Contact Me</h1>
-                    </div>
+                    </div> */}
                     <div className={styles.firstName}>
                         <label htmlFor="fname">First name</label>
                         <input
