@@ -9,32 +9,31 @@ const SelectionItem = (props : {name: string, target: string, index: number, upd
     const [animating, setAnimating] = useState<boolean>(false);
 
     return (
-        <div className   ={styles.selectionBox}
-             onMouseEnter={() => { setAnimating(true); }}
-             onClick     ={() => { update(index); }}
-             onMouseLeave={() => { setAnimating(false); }}>
-            <span>
-                { name }
-            </span>
-            <div className={styles.selectionRectangle} 
-                 style    ={
-                {backgroundColor: selectedItem == index 
-                        ? "#ffa500" 
-                        : animating ? "rgba(255,165,0,0.35)" : "black"
-                }
-            }> 
-                <Link
-                    to={target}
-                    activeClass="active"
-                    className="nav-link"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={1000}
-                >
-                </Link>
+        <Link
+            to={target}
+            className={styles.navlink}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+        >
+            <div className   ={styles.selectionBox}
+                onMouseEnter={() => { setAnimating(true); }}
+                onClick     ={() => { update(index); }}
+                onMouseLeave={() => { setAnimating(false); }}>
+                <span>
+                    { name }
+                </span>
+                <div className={styles.selectionRectangle} 
+                    style    ={
+                    {backgroundColor: selectedItem == index 
+                            ? "#ffa500" 
+                            : animating ? "rgba(255,165,0,0.35)" : "black"
+                    }
+                }> 
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
