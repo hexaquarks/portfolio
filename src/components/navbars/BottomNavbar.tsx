@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import githubIcon from '../../assets/githubOrange.png'
-import linkedIn from '../../assets/linkedinIcon.png'
 import styles from './Navbars.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -8,8 +6,12 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 const BottomNavbar = () => {
     return (
         <div className={styles.bottomNavbarContainer}>
-            <FontAwesomeIcon icon={faGithub} className={styles.icon}/>
-            <FontAwesomeIcon icon={faLinkedin} className={styles.icon}/>
+            <a href="https://github.com/hexaquarks" target="_blank">
+                <FontAwesomeIcon icon={faGithub} className={styles.icon}/>
+            </a>
+            <a href="https://www.linkedin.com/in/mihail-anghelici-85196a20a/" target="_blank">
+                <FontAwesomeIcon icon={faLinkedin} className={styles.icon}/>
+            </a>
         </div>
     );
 }
