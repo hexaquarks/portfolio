@@ -47,44 +47,41 @@ const Contact = () => {
             <form onSubmit={handleSubmit} >
             <div className={styles.container}>
                 <div className={styles.content}>
-                <div className={styles.leftSide}>
-                    <div className={styles.addressDetails}>
-                        <FontAwesomeIcon icon={faMapMarker} />
-                    {/* <i className="fas fa-map-marker-alt"></i> */}
-                    <div className={styles.topic}>Address</div>
-                    <div className={styles.textOne}>Surkhet, NP12</div>
-                    <div className={styles.textTwo}>Birendranagar 06</div>
+                    <div className={styles.leftSide}>
+                        <div className={styles.details}>
+                            <FontAwesomeIcon icon={faMapMarker} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Address</div>
+                            <div className={styles.textOne}>Montreal, QC</div>
+                        </div>
+                        <div className={styles.details}>
+                            <FontAwesomeIcon icon={faPhone} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Phone</div>
+                            <div className={styles.textOne}>514 922 9885</div>
+                        </div>
+                        <div className={styles.details}>
+                            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Email</div>
+                            <div className={styles.textOne}>mihail.anghelici@mail.mcgill.ca</div>
+                        </div>
                     </div>
-                    <div className={styles.phoneDetails}>
-                    <FontAwesomeIcon icon={faPhone} />
-                    <div className={styles.topic}>Phone</div>
-                    <div className={styles.textOne}>+0098 9893 5647</div>
-                    <div className={styles.textTwo}>+0096 3434 5678</div>
-                    </div>
-                    <div className={styles.emailDetails}>
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    <div className={styles.topic}>Email</div>
-                    <div className={styles.textOne}>codinglab@gmail.com</div>
-                    <div className={styles.textTwo}>info.codinglab@gmail.com</div>
-                    </div>
-                </div>
                 <div className={styles.rightSide}>
-                    <div className={styles.topicText}>Send us a message</div>
-                    <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-                <form action="#">
-                    <div className={styles.inputBox}>
-                    <input type="text" placeholder="Enter your name"/>
+                    <div className={styles.topicText}>Send me a message</div>
+                        <p>For any queries, questions and offers, please send me an email. I will respond immediately.</p>
+                        <form action="#">
+                            <div className={styles.inputBox}>
+                                <input type="text" placeholder="Enter your name"/>
+                            </div>
+                            <div className={styles.inputBox}>
+                                <input type="text" placeholder="Enter your email"/>
+                            </div>
+                            <div className={`${styles.inputBox} ${styles.messageBox}`} >
+                                <input type="text" placeholder="Enter your message"/>
+                            </div>
+                            <div className={styles.button}>
+                                <input type="button" value="Send Now" />
+                            </div>
+                        </form>
                     </div>
-                    <div className={styles.inputBox}>
-                    <input type="text" placeholder="Enter your email"/>
-                    </div>
-                    <div className={`${styles.inputBox} ${styles.messageBox}`} >
-                    </div>
-                    <div className={styles.button}>
-                    <input type="button" value="Send Now" />
-                    </div>
-                </form>
-                </div>
                 </div>
             </div>
             </form>

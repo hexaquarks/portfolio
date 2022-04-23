@@ -16,10 +16,12 @@
 // }
 .container{
   width: 85%;
+  height: 100%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding-top: 4%;
 }
 .container .content{
   display: flex;
@@ -39,7 +41,7 @@
 .content .leftSide::before{
   content: '';
   position: absolute;
-  height: 70%;
+  height: 85%;
   width: 2px;
   right: -15px;
   top: 50%;
@@ -47,36 +49,44 @@
   background: #afafb6;
 }
 .content .leftSide .details{
-  margin: 14px;
+  margin: 4%;
   text-align: center;
 }
-.content .leftSide .details i{
-  font-size: 30px;
-  color: #3e2093;
+.content .leftSide .details .icon{
+  font-size: 60px;
+  color: #e0761f;
   margin-bottom: 10px;
 }
 .content .leftSide .details .topic{
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 .content .leftSide .details .textOne,
 .content .leftSide .details .textTwo{
-  font-size: 14px;
-  color: #afafb6;
+  font-size: 1.4rem;
+  color: #6d6d74;
 }
 .container .content .rightSide{
   width: 75%;
-  margin-left: 75px;
+  margin-left: 6%;
+  padding-right: 10%;
 }
-.content .rightSside .topicText{
-  font-size: 23px;
+
+.content .rightSide{
+    p {
+        font-size: 1.4rem;
+        color: #000000;
+    }
+  }
+.content .rightSide .topicText{
+  font-size: 2.7rem;
   font-weight: 600;
-  color: #3e2093;
+  color: #000000;
 }
 .rightSide .inputBox{
-  height: 50px;
-  width: 100%;
-  margin: 12px 0;
+  height: 4rem;
+  width: 70%;
+  margin: 30px 0;
 }
 .rightSide .inputBox input,
 .rightSide .inputBox textarea{
@@ -84,7 +94,7 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 1.2rem;
   background: #F0F1F8;
   border-radius: 6px;
   padding: 0 15px;
@@ -102,17 +112,17 @@
 }
 .rightSide .button input[type="button"]{
   color: #fff;
-  font-size: 18px;
+  font-size: 1.5rem;
   outline: none;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: #3e2093;
+  background: #df6100;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .button input[type="button"]:hover{
-  background: #5029bc;
+  background: #b94100;
 }
 
 @media (max-width: 950px) {
