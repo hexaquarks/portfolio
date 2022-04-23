@@ -3,7 +3,7 @@ import { useState } from 'react';
 // import { useAlert } from 'react-alert';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarker } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -45,57 +45,48 @@ const Contact = () => {
     return (
         <Element id="ContactScrollSection" name="ContactScrollSection">
             <form onSubmit={handleSubmit} >
-                <div className={styles.container}>
-                    <FontAwesomeIcon icon={faMapMarker} size="6x" />
-                    {/* <div className={styles.header}>
-                        <img src={informationIcon} />
-                        <h1> Contact Me</h1>
-                    </div> */}
-                    <div className={styles.firstName}>
-                        <label htmlFor="fname">First name</label>
-                        <input
-                            type="text" 
-                            placeholder="First Name..."
-                            id="fname" required />
+            <div className={styles.container}>
+                <div className={styles.content}>
+                <div className={styles.leftSide}>
+                    <div className={styles.addressDetails}>
+                        <FontAwesomeIcon icon={faMapMarker} />
+                    {/* <i className="fas fa-map-marker-alt"></i> */}
+                    <div className={styles.topic}>Address</div>
+                    <div className={styles.textOne}>Surkhet, NP12</div>
+                    <div className={styles.textTwo}>Birendranagar 06</div>
                     </div>
-
-                    <div className={styles.lastName}>
-                        <label htmlFor="lname">Last name</label>
-                        <input
-                            type="text" 
-                            placeholder="Last Name..."
-                            id="lname" required />
+                    <div className={styles.phoneDetails}>
+                    <FontAwesomeIcon icon={faPhone} />
+                    <div className={styles.topic}>Phone</div>
+                    <div className={styles.textOne}>+0098 9893 5647</div>
+                    <div className={styles.textTwo}>+0096 3434 5678</div>
                     </div>
-
-                    <div className={styles.subject}>
-                        <label htmlFor="subject">Subject</label>
-                        <input
-                            type="text" 
-                            placeholder="subject...  (optional)"
-                            id="subject" />
+                    <div className={styles.emailDetails}>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <div className={styles.topic}>Email</div>
+                    <div className={styles.textOne}>codinglab@gmail.com</div>
+                    <div className={styles.textTwo}>info.codinglab@gmail.com</div>
                     </div>
-
-                    <div className={styles.email}>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email" 
-                            placeholder="Email..."
-                            id="email" required />
-                    </div>
-
-                    <div className={styles.input}>
-                        <label htmlFor="message">Message</label>
-                        <textarea
-                            name="message" rows={3} 
-                            placeholder="Your message..." 
-                            id="message" required />
-                    </div>
-                    <button type="submit">
-                        <img src={planeIcon} />
-                        <span>
-                        </span>
-                    </button>
                 </div>
+                <div className={styles.rightSide}>
+                    <div className={styles.topicText}>Send us a message</div>
+                    <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+                <form action="#">
+                    <div className={styles.inputBox}>
+                    <input type="text" placeholder="Enter your name"/>
+                    </div>
+                    <div className={styles.inputBox}>
+                    <input type="text" placeholder="Enter your email"/>
+                    </div>
+                    <div className={`${styles.inputBox} ${styles.messageBox}`} >
+                    </div>
+                    <div className={styles.button}>
+                    <input type="button" value="Send Now" />
+                    </div>
+                </form>
+                </div>
+                </div>
+            </div>
             </form>
         </Element>
     )
