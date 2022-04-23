@@ -2,6 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 // import { useAlert } from 'react-alert';
 import { Element } from 'react-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarker } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
 import styles from './Contact.module.scss';
 
 import informationIcon from '../../assets/informationIcon.jpg';
@@ -40,6 +46,7 @@ const Contact = () => {
         <Element id="ContactScrollSection" name="ContactScrollSection">
             <form onSubmit={handleSubmit} >
                 <div className={styles.container}>
+                    <FontAwesomeIcon icon={faMapMarker} size="6x" />
                     {/* <div className={styles.header}>
                         <img src={informationIcon} />
                         <h1> Contact Me</h1>

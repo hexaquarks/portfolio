@@ -6,65 +6,59 @@ form{
     padding: 25px 0px 25px 0px;
 }
 .container { 
-    width: 60%;
+    width: 45%;
     justify-content: center;
     padding: 0% 5% 0% 5%; ;
-    background-color: #000000;
-    // border-radius: 25px;
-    // box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-     grid-template-rows: 1fr 1fr 1fr 2fr 1.5fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 1.5fr;
     grid-template-areas: 
-    "fn ln"
-    "subb subb"
-    "em em"
-    "in in"
-    "submit submit"; 
-    // margin: auto;
+        "fn ln"
+        "subb subb"
+        "em em"
+        "in in"
+        "submit submit"; 
     margin-top: 4%;
     margin-left: 4%;
-    // max-width: 350px;
-    // background-image:
-    // radial-gradient(
-    //   #000000,
-    //   rgba(102, 102, 102, 0.267)
-    // );
-  height: auto; 
-    // > div {
-    //     max-width: 400px;
-    //     border: 0;
-    // }
+  height: fit-content; 
+    
 }
 input {
     border: 1px solid #ec9735;
     width: 100%;
-    height: 50%;
+    height: 30%;
     border-radius: 4px;
-    margin-top: 2px;
-    box-shadow: 0px 0px 5px rgb(90, 90, 90);
+    margin-top: 1.5%;
+    // box-shadow: 0px 0px 5px rgb(90, 90, 90);
+}
+input:focus {
+    border: 3px solid hsl(34, 100%, 54%);
 }
 label {
      color: white; 
      width: 30%;
-     font-size: 17px;
+     font-size: 18px;
 }
 
 .container {
+    height: 800px;
     label {
         font-size: 2rem;
+        padding-top: -10%;
     }
     button { grid-area: submit; }
     .firstName {
+        display: block;
         grid-area: fn;
         margin-right: 5%;
-        margin-top: 20%;
+        margin-top: 5%;
     }
     .lastName {
         grid-area: ln;
         margin-left: 5%;
-        margin-top: 20%;
+        margin-top: 5%;
     }
     .subject { grid-area: subb;}
     .email { grid-area: em; }
@@ -76,7 +70,7 @@ label {
             width: 100%;
             height: 70px;
             border-radius: 4px;
-            margin-top: 2px;
+            margin-top: 2%;
         }
     }
     button {
