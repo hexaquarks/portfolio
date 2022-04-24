@@ -198,9 +198,9 @@
     }
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1330px) {
   .container .projectGif:last-child {
-    // grid-column-start: unset;
+    grid-column-start: unset;
   }
 }
   

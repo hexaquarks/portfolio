@@ -41,9 +41,9 @@
                 height: fit-content;
                 // grid-template-columns: 2fr 0.1fr;
                 grid-template-columns: 0.5fr 0.5fr 6fr;
-                grid-template-rows: repeat(3, 1fr);
+                // grid-template-rows: repeat(3, 1fr);
                 grid-column-gap: 4%;
-                row-gap: 20px;
+                row-gap: 10px;
                 font-size: 1.75rem;
                 & > div {
                     align-self: center;
@@ -98,15 +98,18 @@
 
     .descriptionHeader, .educationDescription, .latexDescription {
         // font-size: max(1vw, 1.5vw);
-        font-size: 2em;
+        font-size: 1.6em;
     }
     .latexContainer {
         background-color: black;
-        padding-left: 20%;
-        padding-top:15%;
-        height: 175px;
+        padding-left: 8%;
+        // padding-top:25%;
+        height: 260px;
         grid-area: 3 / 3 / 4 / 5;
         align-content: center;
+        & > div {
+            margin-top: 100px;
+        }
     }
 
     hr {
@@ -192,16 +195,16 @@ legend {
 
 i {
     font-family: 'Lucida Sans', serif;
-    font-size: 1.1vw;
+    font-size: 1.0vw;
 }
 
 span { 
     font-family: 'Trebuchet', serif; 
-    font-size: 1.5vw;
+    font-size: 1.3vw;
 }
 
 .universityName {
-    font-size: 1.6vw;
+    font-size: 1.3vw;
 }
 .dropArrow {
     width: 3vw;
