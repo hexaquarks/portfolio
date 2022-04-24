@@ -19,3 +19,21 @@
         font-size: 3.5rem;
     }
 }
+
+.topNavbarContainer { 
+    position: absolute;
+    content: "";
+    top:0;
+    left:0;
+    width: 100vw;
+    background-color: black;
+
+    display: flex;
+    .itemsLeft {
+
+    }
+
+    .itemsRight {
+
+    }
+}

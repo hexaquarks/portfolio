@@ -4,7 +4,6 @@ import About from './components/about/About';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import BottomNavbar from './components/navbars/BottomNavbar';
-import 'font-awesome/css/font-awesome.min.css';
 
 import './App.scss';
 

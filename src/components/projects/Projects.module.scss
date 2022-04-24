@@ -8,7 +8,7 @@
     padding-bottom: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fill,
-           minmax(max(400px,(750px - (2 - 1)*150px)/2), 1fr));
+           minmax(max(350px,(750px - (2 - 1)*150px)/2), 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 150px;
     margin: 0 auto;
@@ -17,8 +17,8 @@
 
     .projectGif {
         position: relative;
-        width: 425px;
-        height: 425px;
+        width: 400px;
+        height: 400px;
         margin: 0 auto;
         justify-self: center;
     
@@ -58,7 +58,7 @@
         height: inherit; 
         // background-size: 100% 100%;   
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        // background-attachment: fixed;
         background-position: center;
         background-color: #898989;
         background-color: -webkit-linear-gradient(92deg, #000000, #898989);
@@ -198,9 +198,9 @@
     }
 }
 
-@media only screen and (max-width: 1650px) {
+@media only screen and (max-width: 1250px) {
   .container .projectGif:last-child {
-    grid-column-start: unset;
+    // grid-column-start: unset;
   }
 }
   
