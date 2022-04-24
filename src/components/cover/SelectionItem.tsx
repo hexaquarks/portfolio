@@ -2,7 +2,7 @@ import { useState } from "react";
 import Scroll, { Link }  from 'react-scroll'
 import styles from './Cover.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCircleInfo, faFolderClosed, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
 interface selectionItemInterface {
     name : string,
@@ -16,6 +16,7 @@ const SelectionItem = (props : selectionItemInterface) => {
 
     const {name, target, index, update, selectedItem, navbarFlag} = props;
     const [animating, setAnimating] = useState<boolean>(false);
+    const icons = [faHome, faCircleInfo, faFolderClosed, faIdCard];
 
     return (
         <Link
@@ -31,7 +32,7 @@ const SelectionItem = (props : selectionItemInterface) => {
                 onClick     ={() => { update(index); }}
                 onMouseLeave={() => { setAnimating(false); }}
                 style      ={{gridTemplateColumns: `0.5fr 1.8fr 0.2fr`}}>
-                <FontAwesomeIcon icon={faHome} className={styles.icon}/>
+                <FontAwesomeIcon icon={icons[index]} className={styles.icon}/>
                 <span>
                     { name }
                 </span>
