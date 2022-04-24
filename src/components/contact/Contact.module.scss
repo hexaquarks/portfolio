@@ -106,89 +106,9 @@ textarea {
     padding-top: 6px;
 }
 
-// .container .content{
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-// .container .content .leftSide{
-//   width: 25%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 15px;
-//   position: relative;
-// }
-// .content .leftSide::before{
-//   content: '';
-//   position: absolute;
-//   height: 85%;
-//   width: 2px;
-//   right: -15px;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: #afafb6;
-// }
-// .content .leftSide .details{
-//   margin: 4%;
-//   text-align: center;
-// }
-// .content .leftSide .details .icon{
-//   font-size: 60px;
-//   color: #e0761f;
-//   margin-bottom: 10px;
-// }
-// .content .leftSide .details .topic{
-//   font-size: 1.6rem;
-//   font-weight: 600;
-// }
-// .content .leftSide .details .textOne,
-// .content .leftSide .details .textTwo{
-//   font-size: 1.4rem;
-//   color: #6d6d74;
-// }
-// .container .content .rightSide{
-//   width: 75%;
-//   margin-left: 6%;
-//   padding-right: 10%;
-// }
-
-// .content .rightSide{
-//     p {
-//         font-size: 1.4rem;
-//         color: #000000;
-//     }
-//   }
-// .content .rightSide .topicText{
-//   font-size: 2.7rem;
-//   font-weight: 600;
-//   color: #000000;
-// }
-// .rightSide .inputBox{
-//   height: 4rem;
-//   width: 70%;
-//   margin: 30px 0;
-// }
-// .rightSide .inputBox input,
-// .rightSide .inputBox textarea{
-//   height: 100%;
-//   width: 100%;
-//   border: none;
-//   outline: none;
-//   font-size: 1.2rem;
-//   background: #F0F1F8;
-//   border-radius: 6px;
-//   padding: 0 15px;
-//   resize: none;
-// }
-// .rightSide .messageBox{
-//   min-height: 110px;
-// }
-// .rightSide .inputBox textarea{
-//   padding-top: 6px;
-// }
+input:focus {
+    border: 2px solid orange;
+}
 .rightPanel .button {
     display: inline-block;
     margin-top: 12px;

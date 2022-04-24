@@ -4,10 +4,17 @@ import styles from './Cover.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faHome } from '@fortawesome/free-solid-svg-icons';
 
+interface selectionItemInterface {
+    name : string,
+    target: string,
+    index: number,
+    update: (num: number ) => void,
+    selectedItem: number,
+    navbarFlag: boolean   
+}
+const SelectionItem = (props : selectionItemInterface) => {
 
-const SelectionItem = (props : {name: string, target: string, index: number, update: (num :number) => void, selectedItem: number}) => {
-
-    const {name, target, index, update, selectedItem} = props;
+    const {name, target, index, update, selectedItem, navbarFlag} = props;
     const [animating, setAnimating] = useState<boolean>(false);
 
     return (
@@ -22,7 +29,8 @@ const SelectionItem = (props : {name: string, target: string, index: number, upd
             <div className   ={styles.selectionBox}
                 onMouseEnter={() => { setAnimating(true); }}
                 onClick     ={() => { update(index); }}
-                onMouseLeave={() => { setAnimating(false); }}>
+                onMouseLeave={() => { setAnimating(false); }}
+                style      ={{gridTemplateColumns: `0.5fr 1.8fr 0.2fr`}}>
                 <FontAwesomeIcon icon={faHome} className={styles.icon}/>
                 <span>
                     { name }

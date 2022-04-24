@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+const TopNavbar = () => {
     return (
-        <div className={styles.navbarContainer}>
+        <div className={styles.topNavbarContainer}>
             
         </div>
     );
 }
 
-export default Navbar;
+export default TopNavbar;

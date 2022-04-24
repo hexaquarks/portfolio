@@ -62,6 +62,7 @@ const Cover = () => {
                                         index        ={index}
                                         update       ={updateSelectedItem} 
                                         selectedItem ={selectedItem}
+                                        navbarFlag   ={false}
                             />
                         ))}
                     </div>

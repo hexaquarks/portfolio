@@ -97,7 +97,8 @@
     }
 
     .descriptionHeader, .educationDescription, .latexDescription {
-        font-size: max(1vw, 1.5vw);
+        // font-size: max(1vw, 1.5vw);
+        font-size: 2em;
     }
     .latexContainer {
         background-color: black;
