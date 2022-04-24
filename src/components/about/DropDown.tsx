@@ -60,6 +60,7 @@ const DropDown = (props : propsInterface) => {
             </div>
             <div>
                 <img src   ={ information[index].image } 
+                     className={styles.universityIcon}
                      width ={ index === 2 ? '75' : '90' } 
                      height={ index === 2 ? '75' : '90' } 
                      style ={ {marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '10px' : '0px'} }
@@ -67,7 +68,7 @@ const DropDown = (props : propsInterface) => {
                 />
             </div>
             <div >
-                <b>{information[index].title}</b> &#8213; <span>{information[index].description}</span> <br /> <i>{information[index].year}</i>
+                <b className={styles.universityName}>{information[index].title}</b> &#8213; <span>{information[index].description}</span> <br /> <i>{information[index].year}</i>
             </div>
 
         </React.Fragment>

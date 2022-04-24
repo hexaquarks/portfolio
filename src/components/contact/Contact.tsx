@@ -5,9 +5,6 @@ import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-
-
-
 import styles from './Contact.module.scss';
 
 import informationIcon from '../../assets/informationIcon.jpg';
@@ -47,11 +44,11 @@ const Contact = () => {
             <form onSubmit={handleSubmit} >
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <div className={styles.leftSide}>
+                    <div className={styles.leftPanel}>
                         <div className={styles.details}>
-                            <FontAwesomeIcon icon={faMapMarker} className={styles.icon} size="3x"/>
-                            <div className={styles.topic}>Address</div>
-                            <div className={styles.textOne}>Montreal, QC</div>
+                            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Email</div>
+                            <div className={styles.textOne}>mihail.anghelici@mail.mcgill.ca</div>
                         </div>
                         <div className={styles.details}>
                             <FontAwesomeIcon icon={faPhone} className={styles.icon} size="3x"/>
@@ -59,12 +56,12 @@ const Contact = () => {
                             <div className={styles.textOne}>514 922 9885</div>
                         </div>
                         <div className={styles.details}>
-                            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} size="3x"/>
-                            <div className={styles.topic}>Email</div>
-                            <div className={styles.textOne}>mihail.anghelici@mail.mcgill.ca</div>
+                            <FontAwesomeIcon icon={faMapMarker} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Address</div>
+                            <div className={styles.textOne}>Montreal, QC</div>
                         </div>
                     </div>
-                <div className={styles.rightSide}>
+                <div className={styles.rightPanel}>
                     <div className={styles.topicText}>Send me a message</div>
                         <p>For any queries, questions and offers, please send me an email. I will respond immediately.</p>
                         <form action="#">

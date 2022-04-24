@@ -17,7 +17,7 @@
     } 
 
     span {
-        font-size: 1.8rem;
+        font-size: 1.5vw;
         color: #F2f2f2;
         // color: black;
     }    
@@ -33,16 +33,21 @@
             padding-right: 5%;
             margin-right: 5%;
             width: 100%; 
+            height: fit-content;
             margin-top:-5%;
     
             & > p {
                 display: grid;
+                height: fit-content;
                 // grid-template-columns: 2fr 0.1fr;
                 grid-template-columns: 0.5fr 0.5fr 6fr;
                 grid-template-rows: repeat(3, 1fr);
                 grid-column-gap: 4%;
                 row-gap: 20px;
                 font-size: 1.75rem;
+                & > div {
+                    align-self: center;
+                }
             }
         }
         
@@ -186,12 +191,26 @@ legend {
 
 i {
     font-family: 'Lucida Sans', serif;
-    font-size: 1.25rem;
+    font-size: 1.1vw;
 }
 
 span { 
     font-family: 'Trebuchet', serif; 
-    font-size: 1.6rem;
+    font-size: 1.5vw;
+}
+
+.universityName {
+    font-size: 1.6vw;
+}
+.dropArrow {
+    width: 3vw;
+    height: 3vw;
+}
+.universityIcon {
+    width: 4vw;
+    min-width: 60px;
+    height: 4vw;
+    min-height: 60px;
 }
 
 [alt~="mcgillIcon"]:hover,

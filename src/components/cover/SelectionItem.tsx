@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Scroll, { Link }  from 'react-scroll'
 import styles from './Cover.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faHome } from '@fortawesome/free-solid-svg-icons';
 
 
 const SelectionItem = (props : {name: string, target: string, index: number, update: (num :number) => void, selectedItem: number}) => {
@@ -21,6 +23,7 @@ const SelectionItem = (props : {name: string, target: string, index: number, upd
                 onMouseEnter={() => { setAnimating(true); }}
                 onClick     ={() => { update(index); }}
                 onMouseLeave={() => { setAnimating(false); }}>
+                <FontAwesomeIcon icon={faHome} className={styles.icon}/>
                 <span>
                     { name }
                 </span>
