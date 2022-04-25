@@ -3,6 +3,7 @@ import { Element } from 'react-scroll'
 import TitleLetter from './TitleLetter';
 import SelectionItem from './SelectionItem';
 import styles from './Cover.module.scss';
+import maLogo from '../../assets/maLogo.png';
 // const styles = require('./Cover.module.scss');
 
 const Cover = () => {
@@ -53,7 +54,7 @@ const Cover = () => {
                 </div>
                 <div className={styles.sideBar} >
                     <div className={styles.sideBarIcon}>
-
+                        <img src={maLogo} className={styles.mainIcon} />
                     </div>
                     <div className={styles.sideBarSelection} >
                         {selectionItems.map((value, index) => (

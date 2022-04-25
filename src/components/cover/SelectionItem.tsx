@@ -24,8 +24,10 @@ const SelectionItem = (props : selectionItemInterface) => {
             className={styles.navlink}
             spy={true}
             smooth={true}
-            offset={-70}
+            // offset={-70}
             duration={1000}
+            onSetActive={() => update(index)}
+            onSetInactive={() => setAnimating(false)}
         >
             <div className   ={styles.selectionBox}
                 onMouseEnter={() => { setAnimating(true); }}
