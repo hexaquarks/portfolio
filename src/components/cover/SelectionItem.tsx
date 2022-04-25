@@ -24,7 +24,6 @@ const SelectionItem = (props : selectionItemInterface) => {
             className={styles.navlink}
             spy={true}
             smooth={true}
-            // offset={-70}
             duration={1000}
             onSetActive={() => update(index)}
             onSetInactive={() => setAnimating(false)}
