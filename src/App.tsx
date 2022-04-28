@@ -4,12 +4,16 @@ import About from './components/about/About';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import BottomNavbar from './components/navbars/BottomNavbar';
+import TopNavbar from './components/navbars/TopNavbar';
 
 import './App.scss';
 
 function App() {
   return (
     <div className="window">
+      {/* <div className="top">
+        <TopNavbar />
+      </div> */}
       <div className="coverPage"> 
         <Cover />
       </div>
