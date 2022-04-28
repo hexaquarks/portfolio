@@ -131,3 +131,9 @@ ul {
       color: #c69c6d;
     }
 }
+
+@media (max-width: 875px) {
+    .coverContainer .sideBar {
+        display: none;
+    }
+}

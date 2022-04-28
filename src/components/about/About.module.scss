@@ -43,7 +43,7 @@
                 // grid-template-rows: repeat(3, 1fr);
                 grid-column-gap: 4%;
                 row-gap: 10px;
-                font-size: 1.75rem;
+                font-size: 1.75rem; // the bar inside the education fields
                 & > div {
                     align-self: center;
                 }
@@ -98,7 +98,8 @@
 
     .descriptionHeader, .educationDescription, .latexDescription {
         // font-size: max(1vw, 1.5vw);
-        font-size: 1.6em;
+        font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+
     }
     .latexContainer {
         background-color: black;
@@ -230,5 +231,11 @@ span {
         #aboutDiv { grid-area: 2 / 1 / 3 / 3;}
         .latexDescription { grid-area: 3 / 1 / 4 / 3;}
         .latexContainer { grid-area: 4 / 1 / 5 / 3; margin: 0 auto;}
+    }
+}
+
+@media (max-width: 875px) {
+    .aboutGrid {
+        width: 90%;
     }
 }
