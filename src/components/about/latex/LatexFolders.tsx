@@ -41,10 +41,6 @@ const LatexFolders = () => {
 
     return (
         <div className={styles.window}>
-            <h2>
-                LaTeX 
-            </h2>
-            <hr />
             <button className={styles.left_arrow}
                 onClick={() => onClick('right')}
                 style={{ opacity: `${manageOpacity('left', xPos)}%` }}>

@@ -55,6 +55,10 @@ const About = () => {
                     by my teacher.
                 </span>
                 <div className={styles.latexContainer}>
+                <h2>
+                    LaTeX 
+                </h2>
+                <hr />
                     <LatexFolders />
                 </div>
             </div>

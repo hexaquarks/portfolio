@@ -108,15 +108,19 @@ const ProjectElement = (props : propsInterface) => {
                                 cursor: setStyle('bottom', 'cursor'),
                                 opacity: bottomOpacity
                 }}>
-                <span></span>
-                <h6>
-                    <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
-                        <img src={githubIcon} width="30" height="30" />
-                    </a>
-                </h6>
+                <div className={styles.projectDescriptionTopHeader}>
+                    <h6>
+                        <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
+                            <img src={githubIcon} width="30" height="30" />
+                        </a>
+                    </h6>
+                </div>
                 <p> 
                     { description }
                 </p>
+                {/* <div className={styles.projectDescriptionBottomHeader}>
+                    
+                </div> */}
                 <div className={styles.technologiesContainer}>
                     <img src   ={javaIcon} 
                             width ="45px" 

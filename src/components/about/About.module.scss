@@ -55,7 +55,7 @@
             // margin: 0 auto;
             // margin-left: 20%;
             position:relative;
-            left:25px;
+            left: 4px;
             // margin-top: 55px;
             // height: 250px;   
             color: white;
@@ -106,12 +106,36 @@
         background-color: black;
         padding-left: 8%;
         // padding-top:25%;
-        height: 260px;
+        height: 110%;
         grid-area: 3 / 3 / 4 / 5;
         align-content: center;
-        & > div {
-            margin-top: 100px;
+
+        > h2 {
+            width: 10ch;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(20px, 3vw, 35px);
+            background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100%;
+        
+            transition: background-position 500ms ease;
         }
+    
+        & > h2:hover { background-position: 0 100%; }
+    
+        > hr {
+            position: relative;
+            margin-top: -1%;
+            width: 85%;
+            margin-right: 25%
+         }
+
+        & > div { margin-top: 4%; }
+
+        
     }
 
     hr {
@@ -241,5 +265,6 @@ span {
 @media (max-width: 875px) {
     .aboutGrid {
         width: 90%;
+        .latexContainer{ padding-left: 0;}
     }
 }
