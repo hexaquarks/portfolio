@@ -46,9 +46,9 @@ const Contact = () => {
                 <div className={styles.content}>
                     <div className={styles.leftPanel}>
                         <div className={styles.details}>
-                            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} size="3x"/>
-                            <div className={styles.topic}>Email</div>
-                            <div className={styles.textOne}>mihail.anghelici@mail.mcgill.ca</div>
+                            <FontAwesomeIcon icon={faMapMarker} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Address</div>
+                            <div className={styles.textOne}>Montreal, QC</div>
                         </div>
                         <div className={styles.details}>
                             <FontAwesomeIcon icon={faPhone} className={styles.icon} size="3x"/>
@@ -56,9 +56,9 @@ const Contact = () => {
                             <div className={styles.textOne}>514 922 9885</div>
                         </div>
                         <div className={styles.details}>
-                            <FontAwesomeIcon icon={faMapMarker} className={styles.icon} size="3x"/>
-                            <div className={styles.topic}>Address</div>
-                            <div className={styles.textOne}>Montreal, QC</div>
+                            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} size="3x"/>
+                            <div className={styles.topic}>Email</div>
+                            <div className={styles.textOne}>mihail.anghelici@mail.mcgill.ca</div>
                         </div>
                     </div>
                 <div className={styles.rightPanel}>
