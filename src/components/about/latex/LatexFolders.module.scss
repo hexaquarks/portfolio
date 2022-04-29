@@ -199,5 +199,14 @@
     }
   }
 
+  @media (max-width: 500px) {
+    .window {
+      .slider { width: 240px; }
+      .left_arrow { right: 0px; }
+      .right_arrow { left: 0px; }
+    }
+      
+  }
+
   
   

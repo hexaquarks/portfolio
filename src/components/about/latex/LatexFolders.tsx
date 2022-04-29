@@ -1,12 +1,19 @@
 import { useState } from 'react';
 import CourseFolder from "./CourseFolder";
-
+import UseWindowDimensions from '../../../utilities/UseWindowDimensions';
 import styles from './LatexFolders.module.scss';
 
-const LEFT_MAX = 780;
-const SHIFT = 130;
+// hook for windows width and if less than threshold then map items down
 
 const LatexFolders = () => {
+    const { width, height } = UseWindowDimensions();
+
+    let SHIFT = 130;
+    SHIFT = (width! <= 500) ? 80 : 130;
+    let LEFT_MAX = SHIFT * 6;
+
+
+
     const [xPos, setXPos] = useState<number>(0);
     const [enableArrows, setEnableArrows] = useState<boolean>(false);
 
@@ -51,6 +58,7 @@ const LatexFolders = () => {
                     {courseNames.map((value, index) => (
                         <CourseFolder value={value} key={index} 
                                       xPos={xPos} index={index} 
+                                      folderWidth={SHIFT}
                                       setEnableArrows={setEnableArrows}
                         /> 
                     ))}

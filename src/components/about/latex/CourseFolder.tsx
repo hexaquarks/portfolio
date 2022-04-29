@@ -13,6 +13,7 @@ interface propsInterface {
     key   : number;
     xPos  : number;
     index : number;
+    folderWidth : number,
     setEnableArrows : React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -22,7 +23,7 @@ interface courseInterface {
 }
 
 function CourseFolder(props : propsInterface) {
-  const { value, key, xPos, index,  setEnableArrows} = props;
+  const { value, key, xPos, index, folderWidth, setEnableArrows} = props;
 
   const [image, setImage] = useState<string>(closedFolder);
   const [showDescriptionChild, setShowDescriptionChild] = useState<boolean>(false);
@@ -78,8 +79,8 @@ function CourseFolder(props : propsInterface) {
           setEnableArrows(true);
         }}
       >
-        <img className={-xPos / 130 !== index - 1 ? `${styles.shrinkImage}` : ''} 
-             src={image} width="130" alt="alternative" 
+        <img className={-xPos / folderWidth !== index - 1 ? `${styles.shrinkImage}` : ''} 
+             src={image} width={folderWidth} alt="alternative" 
         />
       </div>
     </div>

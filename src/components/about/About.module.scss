@@ -255,3 +255,9 @@ span {
         .latexContainer{ padding-left: 0;}
     }
 }
+@media (max-width: 500px) {
+    .aboutGrid .latexContainer {
+        width: 100%;
+
+    }
+  }
