@@ -5,9 +5,9 @@
     // justify-content: space-evenly;
 
     .description {
-        margin-left:15%;
-        margin-top:10%;
-        width: 50%;
+        margin-left:10%;
+        margin-top:15%;
+        width: 100%;
         height: inherit;
         .lettersContainer {
             position: relative;
@@ -18,10 +18,11 @@
             position: absolute;
             content: '';
             margin-top:20px;
-            top: -50px;
-            left: -40px;
-            height: 13vw;
-            width: 5px;
+            top: -24%;
+            left: 0;
+            margin-left: -3%;
+            height: 158%;
+            width: clamp(1px, 0.6vw, 5px);
             background-color: #ffa500;
         }
     
@@ -30,7 +31,7 @@
             word-wrap: break-word;
             font-style: italic;
             font-family: 'Perpetua', serif;
-            font-size: 1.5vw;
+            font-size: clamp(10px, 2vw, 28px); //temporary
             // margin-left:10%;
             vertical-align: middle;
         }
@@ -102,7 +103,7 @@ li {
     display: inline-block;
     white-space: nowrap;
     list-style: none;
-    font-size: 5vw;
+    font-size: clamp(25px, 8vw, 80px); //temporary
     color: aliceblue;
     font-family: 'Open Sans Condensed', sans-serif;
     text-transform: uppercase;
@@ -113,8 +114,9 @@ ul {
     display:inline-block;
     vertical-align:top;
     hr {
-        border: 3px solid #ffa500;
+        background-color: #ffa500;
         width: 110%;
+        height: clamp(1px, 0.5vw, 5px);
         margin-left: -10%;
         margin-bottom: 2%;
     }

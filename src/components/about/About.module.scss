@@ -1,7 +1,7 @@
 .aboutGrid {
     width: 65%; 
     margin-left: 5%;
-    padding-top: 100px;
+    padding-top: 50px;
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-column-gap: 20px;
@@ -76,21 +76,8 @@
         }
     
         & > div > h2:hover { background-position: 0 100%; }
-    
-        // & > div > p {
-        //     font-family: 'Playfair Display', serif;
-        //     font-size: 147%;
-    
-        //     &::first-letter {
-        //         color: #c69c6d;
-        //         float: left;
-        //         font-size: 2.9em;
-        //         margin: -0.2em .2em -0.3em 0;
-        //     }
-        // }
     }
     .educationDescription {
-        // grid-area: 2 / 4 / 3 / 5; 
         display: none;
     }
     .latexDescription {
