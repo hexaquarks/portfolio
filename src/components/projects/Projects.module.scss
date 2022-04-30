@@ -211,6 +211,9 @@
       width: clamp(200px, 60vw, 400px);
       height: clamp(200px, 60vw, 400px);
       justify-self: auto;
+      .projectPicture {
+        img {opacity: unset;}
+      }
   }
 }
   

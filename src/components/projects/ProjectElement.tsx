@@ -15,6 +15,7 @@ import chessGif from '../../assets/ChessGamePromotionTraversal.gif'
 import knightIcon from '../../assets/knightIcon.png';
 import atomIcon from '../../assets/atomIcon.png'
 import weatherIcon from '../../assets/weatherIcon.png'
+import UseWindowDimensions from '../../utilities/UseWindowDimensions'
 import { url } from 'inspector';
 
 interface propsInterface { 
@@ -28,6 +29,7 @@ interface propsInterface {
 const ProjectElement = (props : propsInterface) => {
     const { link, title, description, iconPath, index } = props;
     const gifs = [chessGif,particleFunGif, weatherGif];
+    const { width, height } = UseWindowDimensions();
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         topPicture: 'top',
@@ -94,13 +96,7 @@ const ProjectElement = (props : propsInterface) => {
                          backgroundImage: `url(${iconPaths[index]})`
                 }}>
                     <img src  ={gifs[index]} 
-                         style={{opacity: showProject ? '1' : '0'}}/>
-
-                {/* <div className   ={styles.projectHider}
-                     onMouseEnter={() => setShowProject(true)}
-                     onMouseLeave={() => setShowProject(false)}
-                     style       ={{display: showProject ? `none` : `initial`}}>
-                </div> */}
+                         style={{opacity: (showProject || width! <= 875)  ? '1' : '0'}}/>
             </div>
             <div className={styles.projectDescription}
                     onClick  ={() => { changePicture('bottom') }}
