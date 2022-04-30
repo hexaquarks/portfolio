@@ -63,7 +63,6 @@ const DropDown = (props : propsInterface) => {
                      className={styles.universityIcon}
                      width ={ index === 2 ? '75' : '90' } 
                      height={ index === 2 ? '75' : '90' } 
-                     style ={ {marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '10px' : '0px'} }
                      alt   ="mcgillIcon" 
                 />
             </div>

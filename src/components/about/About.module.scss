@@ -231,14 +231,14 @@ span {
     font-size: clamp(0.75rem, 2.5vw, 1.5rem);
 }
 .dropArrow {
-    width: 3vw;
-    height: 3vw;
+    width: clamp(20px, 2.5vw, 3vw);
+    height: clamp(20px, 2.5vw, 3vw);
 }
 .universityIcon {
     width: 4vw;
-    min-width: 30px;
+    min-width: 35px;
     height: 4vw;
-    min-height: 30px;
+    min-height: 35px;
 }
 
 [alt~="mcgillIcon"]:hover,
