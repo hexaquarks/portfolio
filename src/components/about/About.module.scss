@@ -9,7 +9,6 @@
      
     #aboutDiv {
         grid-area: 2 / 1 / 3 / 5;
-        overflow: hidden;
     }
 
     .descriptionHeader {
@@ -184,7 +183,7 @@ fieldset {
     margin-top: -10px;
 }
 legend {
-    font-size: 22px;
+    font-size: clamp(16px, 2vw, 26px);
     font-weight: 600;
 }
 
@@ -192,13 +191,13 @@ legend {
     justify-content: center;
     margin-top: -25px;
     margin-bottom: -20px;
-    margin-left: 30px;
+    margin-left: 3%;
 
     & > ul {
-        line-height: 24px;
+        line-height: clamp(15px, 3vw, 30px);
         font-size: 19px;
         li {
-            font-size: 1.5rem;
+            font-size: clamp(0.6rem, 2.4vw, 1.4rem);
             display: list-item;
             list-style: disc;
             text-transform: none;
