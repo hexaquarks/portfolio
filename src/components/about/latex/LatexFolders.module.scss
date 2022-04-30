@@ -4,6 +4,7 @@
     display:flex;
     align-items: center;
     margin-right: 50px;
+    margin-left: 5%;
     position: relative;
 
     .shrinkImage{
@@ -199,13 +200,16 @@
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     .window {
+      width: unset;
+      margin-right: unset;
+      margin-left:1%;
+      margin-right:1%;
       .slider { width: 240px; }
       .left_arrow { right: 0px; }
       .right_arrow { left: 0px; }
-    }
-      
+    } 
   }
 
   

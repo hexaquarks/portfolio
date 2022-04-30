@@ -92,7 +92,7 @@
     }
     .latexContainer {
         background-color: black;
-        padding-left: 8%;
+        // padding-left: 8%;
         // padding-top:25%;
         height: 110%;
         grid-area: 3 / 3 / 4 / 5;
@@ -101,6 +101,8 @@
 
         > h2 {
             width: 10ch;
+            padding-left: 8%;
+            // margin-left: 5%;
             font-family: 'Playfair Display', serif;
             font-size: clamp(20px, 3vw, 35px);
             background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
@@ -118,11 +120,15 @@
         > hr {
             position: relative;
             margin-top: -1%;
+            margin-left: 8%;
             width: 85%;
             margin-right: 25%
          }
 
-        & > div { margin-top: 4%; }
+        & > div { 
+            margin-top: 4%; 
+            justify-content: center;
+        }
 
         
     }
@@ -257,7 +263,7 @@ span {
         // .latexContainer{ padding-left: 0;}
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .aboutGrid .latexContainer {
         width: 100%;
 

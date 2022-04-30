@@ -9,7 +9,7 @@ const LatexFolders = () => {
     const { width, height } = UseWindowDimensions();
 
     let SHIFT = 130;
-    SHIFT = (width! <= 500) ? 80 : 130;
+    SHIFT = (width! <= 550) ? 80 : 130;
     let LEFT_MAX = SHIFT * 6;
 
 

@@ -208,8 +208,9 @@
 
 @media (max-width: 875px) {
   .container .projectGif {
-      width: clamp(275px, 60vw, 400px);
-      height: clamp(275px, 60vw, 400px);
+      width: clamp(200px, 60vw, 400px);
+      height: clamp(200px, 60vw, 400px);
+      justify-self: auto;
   }
 }
   
