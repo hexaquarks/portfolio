@@ -3,6 +3,8 @@ import styles from './Navbars.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import SelectionItem from '../cover/SelectionItem';
+import { slide as Menu } from 'react-burger-menu';
+
 
 const TopNavbar = () => {
     const sections = ["Home", "About", "Projects", "Contact"];
@@ -42,17 +44,12 @@ const TopNavbar = () => {
                 </a>
             </div>
             <div className={styles.itemsRight}>
-                <div className={styles.sideBarSelection} >
-                    {selectionItems.map((value, index) => (
-                        <SelectionItem name         ={value.name} 
-                                    target       ={value.target}
-                                    index        ={index}
-                                    update       ={updateSelectedItem} 
-                                    selectedItem ={selectedItem}
-                                    navbarFlag   ={false}
-                        />
-                    ))}
-                </div>
+                <Menu className={styles.bm_burger_menu}>
+                    <a id="home" className="menu-item">Home</a>
+                    <a id="about" className="menu-item" >About</a>
+                    <a id="contact" className="menu-item" >Contact</a>
+                    <a >Settings</a>
+                </Menu>
             </div>
         </div>
     );

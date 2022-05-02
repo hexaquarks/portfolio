@@ -22,20 +22,28 @@
 }
 
 .topNavbarContainer { 
-    position: absolute;
-    content: "";
-    top:0;
-    left:0;
     width: 100vw;
     background-color: black;
+    height: fit-content;
 
     display: flex;
+    flex-direction: row;
     .itemsLeft {
         align-self: flex-start;
+        width: 20vw;
+        height: inherit;
+        align-self: center;
+        margin-left: 1%;
+        .icon { 
+            font-size: clamp(1.5rem, 2vw, 2.2rem);
+            margin: 10% 10% 10% 10%;
+        }
     }
 
     .itemsRight {
         align-self: flex-end;
+        width: 100px;
+        height: 100px;
         .sideBarSelection {
             width: 50vh;
             // margin-top: 10%;
@@ -48,7 +56,6 @@
         }
     }
 }
-
 
 .navlink {
     width: 100%;

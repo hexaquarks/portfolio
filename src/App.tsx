@@ -10,10 +10,10 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="window">
-      {/* <div className="top">
+    <React.Fragment>
+      <div className="top">
         <TopNavbar />
-      </div> */}
+      </div>
       <div className="coverPage"> 
         <Cover />
       </div>
@@ -38,7 +38,7 @@ function App() {
       <div className="bottom">
         <BottomNavbar />
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
