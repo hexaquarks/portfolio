@@ -9,7 +9,12 @@ import TopNavbar from './components/navbars/TopNavbar';
 import './App.scss';
 
 function App() {
+  if (navigator.userAgent.match(/samsung/i)) {
+    alert(`You are using a special browser (Samsung Internet) that 
+    might not display this website's colors properly.`);
+  }
   return (
+    
     <React.Fragment>
       <div className="top">
         <TopNavbar />
