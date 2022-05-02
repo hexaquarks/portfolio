@@ -21,11 +21,11 @@ const Projects = () => {
             projectLink: "https://github.com/hexaquarks/Particle_Fun",
             projectTitle: "Particle Simulation",
             projectDescription: `
-                The program alows the user to add and remove particles with variable size. The program simulates gravitational force, 
-                electrostatic force and allows for elastic collisions. Further,
-                the dynamic quantity of particles can be arranged in shapes 
+                The program simulates gravitational force, 
+                electrostatic force and allows for elastic collisions.
+                The dynamic quantity of particles can be arranged in shapes 
                 such as: circle, square, diamond, spiral, loose spiral, 
-                sunflower spiral. And finally, the shapes can then also be 
+                sunflower spiral. Finally, the shapes can then also be 
                 divided and rotated.`,
                 projectPlaceholder: "../../assets/atomIcon.png"
         },

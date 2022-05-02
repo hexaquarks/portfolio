@@ -36,7 +36,7 @@
           height: 50px;
           top: -50px;
           left: 0px;
-          font-size: clamp(27px, 2vw, 35px);
+          font-size: clamp(22px, 2vw, 35px);
           font-family: 'Open Sans Condensed', sans-serif;
       
           color: #f35626;
@@ -100,8 +100,12 @@
         background-color: #100c08;
     
         .projectDescriptionTopHeader {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
           width:100%;
-          height: 40px;
+          height: 13%;
+          max-height: 40px;
           background-color:coral;
           box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
           padding-left: 25px;
@@ -111,14 +115,22 @@
 
           margin-left: -20px;
           margin-top: 5%;
-
-          & > h6 {
-            width: 30px; 
-            height: 30px;
+          & > span {
+            font-size: clamp(15px, 5vw, 25px);
+            font-weight: 600;
+            align-self: center;
+          }
+          & > a {
             cursor: pointer;
-            margin-left: 80%;
-            margin-top: 5px;
+            margin-right: 5%;
+            justify-self: center;
             animation: breath 2s linear infinite;
+            img {
+              width: 6vw;
+              height: 6vw;
+              max-width: 30px; 
+              max-height: 30px;
+            }
           }
         }
 
@@ -126,7 +138,7 @@
           position: absolute;
           content: '';
           left:-20px;
-          top:60px;
+          top: clamp(35px, 11vw, 60px);
           width: 0;
           height: 0;
           border-style: solid;
@@ -173,6 +185,8 @@
           height: fit-content;
           margin-top: auto;
           display: grid; 
+          margin-bottom: 15px;
+          margin-left: 10%;
           grid-template-columns: 0.2fr 1fr 0.2fr 1fr; 
           grid-template-rows: 1fr 1fr; 
           gap: 0px 0px; 
@@ -180,11 +194,16 @@
             ". . . ."
             ". . . ."; 
           color: aliceblue;
-    
+          .gridIcon {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+          }
           & > span {
-            margin: 10px 0px 0px 5px; 
             font-weight: 600;
-            font-size: clamp(1.0rem, 2.5vw, 1.2rem);
+            font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+            align-self: baseline;
+            margin-left: 10px;
           }
         }
     }

@@ -8,6 +8,8 @@ import cssIcon from '../../assets/css_icon.png';
 import javascriptIcon from '../../assets/javascript_icon_2.png';
 import htmlIcon from '../../assets/html_icon.png';
 import reactIcon from '../../assets/react_icon.png';
+import cppIcon from '../../assets/cpp_icon.png';
+import sfmlIcon from '../../assets/sfml_icon.png';
 import githubIcon from '../../assets/githubBlack.png';
 import particleFunGif from '../../assets/gifTry6.gif';
 import weatherGif from '../../assets/gifWeatherTry3.gif';
@@ -30,6 +32,12 @@ const ProjectElement = (props : propsInterface) => {
     const { link, title, description, iconPath, index } = props;
     const gifs = [chessGif,particleFunGif, weatherGif];
     const { width, height } = UseWindowDimensions();
+    
+    const techStack2 = [
+        [cppIcon, 'C++', sfmlIcon, 'SFML'],
+        [javaIcon, 'Java', javaFXIcon, 'JavaFX', sceneBuilderIcon, 'ScenceBuilder', cssIcon, 'CSS'],
+        [javascriptIcon, 'Javascript', reactIcon , 'React', cssIcon, 'CSS']
+    ]
     
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         topPicture: 'top',
@@ -105,46 +113,20 @@ const ProjectElement = (props : propsInterface) => {
                                 opacity: bottomOpacity
                 }}>
                 <div className={styles.projectDescriptionTopHeader}>
-                    <h6>
+                        <span>Project Description</span>
                         <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
                             <img src={githubIcon} width="30" height="30" />
                         </a>
-                    </h6>
                 </div>
                 <p> 
                     { description }
                 </p>
-                {/* <div className={styles.projectDescriptionBottomHeader}>
-                    
-                </div> */}
                 <div className={styles.technologiesContainer}>
-                    <img src   ={javaIcon} 
-                            width ="45px" 
-                            height="45px"
-                    />
-                    <span> Java </span>
-                    <img src   ={javaFXIcon} 
-                            width ="50px" 
-                            height="60px"
-                            style ={{ marginTop: `-6px` }} 
-                    />
-                    <span> JavaFX </span>
-                    <img src   ={sceneBuilderIcon} 
-                            width ="30px" 
-                            height="40px"
-                            style ={{ marginLeft: `7px` }} 
-                            alt   ="scenebuilder" 
-                    />
-                    <span> SceneBuilder </span>
-                    <img src   ={cssIcon} 
-                            width ="30px" 
-                            height="35px"
-                            style ={{ marginLeft: `7px`, 
-                                    marginTop: `2px` 
-                            }}
-                            alt="css" 
-                    />
-                    <span> CSS </span>
+                    {techStack2[index].map((value, i) => {
+                            return (i %2 ==0) 
+                            ? (<img src ={value} className={styles.gridIcon} />) 
+                            : (<span> {value} </span>)
+                    })}
                 </div>
             </div>
         </div>
