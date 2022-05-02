@@ -94,10 +94,12 @@ h3 {
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
-    width: 36px;
-    height: 30px;
+    width: 4vw;
+    min-width: 25px;
+    height: 4vw;
+    min-height: 25px;
     right: 5%;
-    top: 2%;
+    top: 2.5%;
   }
   
   /* Color/shape of burger icon bars */
@@ -107,6 +109,7 @@ h3 {
   
   /* Color/shape of burger icon bars on hover*/
   .bm-burger-bars-hover {
+    transition: 0.4s all;
     background: #b76003;
   }
   
@@ -118,8 +121,8 @@ h3 {
   
   /* Color/shape of close button cross */
   .bm-cross {
-    background: #bdc3c7;
-  }
+      background: #bdc3c7;
+    }
   
   /*
   Sidebar wrapper styles
@@ -127,16 +130,19 @@ h3 {
   */
   .bm-menu-wrap {
     position: fixed;
-    height: 38%;
+    height: 32% !important;
+    width: 200px !important;
+    overflow: hidden;
+    top: 0 !important;
   }
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
+    background: #2a2a2a;
+    padding: 2.0em 1.5em 0;
     font-size: 1.15em;
-    overflow: hidden;
-    height: 38%;
+    overflow: hidden !important;
+    // top: 0 !important;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -154,17 +160,24 @@ h3 {
   .bm-item {
     display: block;
     font-size: 1.5rem;
-    margin-bottom: 3%;
+    margin-bottom: 18px;
+    cursor: pointer;
+  }
+  .bm-item:hover {
+      color: rgb(227, 158, 29);
   }
   
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0;
+    top:0; 
   }
 
 @media (max-width: 1000px) {
     .coverPage { height: 500px; }
-    .thirdPage { padding-bottom: 5%; }
+    .thirdPage { padding-bottom: 10%; }
 }
 /* When side bar is removed, show top navbar */
 @media (max-width: 875px) {
@@ -172,4 +185,8 @@ h3 {
         display: block;
     }
     .coverPage { margin-top: 60px; }
+}
+
+@media (max-width: 500px) {
+    .thirdPage { padding-bottom: 30%; }
 }

@@ -47,25 +47,9 @@ const TopNavbar = () => {
                 </a>
             </div>
             <div className={styles.itemsRight}>
-                <Menu right>
-                        <a className="menu-item">
-                            <FontAwesomeIcon icon={icons[0]} className={styles.icon}/>
-                            {names[0]}
-                        </a>
-                        <a className="menu-item">
-                            <FontAwesomeIcon icon={icons[1]} className={styles.icon}/>
-                            {names[1]}
-                        </a>
-                        <a className="menu-item">
-                            <FontAwesomeIcon icon={icons[2]} className={styles.icon}/>
-                            {names[2]}
-                        </a>
-                        <a className="menu-item--small">
-                            <FontAwesomeIcon icon={icons[3]} className={styles.icon}/>
-                            {names[3]}
-                        </a>
+                <Menu className={styles.burgerMenu} right>
                         {selectionItems.map((value,index) => {
-                            <Link
+                            return (<Link
                                 className="menu-item"
                                 to={value.target}
                                 spy={true}
@@ -74,7 +58,7 @@ const TopNavbar = () => {
                                 >
                                     <FontAwesomeIcon icon={icons[index]} className={styles.icon}/>
                                     {value.name}
-                            </Link>
+                            </Link>)
                         })}
                 </Menu>
             </div>
