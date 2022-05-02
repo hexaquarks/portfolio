@@ -37,7 +37,7 @@
           top: -50px;
           left: 0px;
           font-size: clamp(27px, 2vw, 35px);
-          font-family: 'Playfair Display', serif;
+          font-family: 'Open Sans Condensed', sans-serif;
       
           color: #f35626;
           background-image: -webkit-linear-gradient(92deg, #ec3a04, #f0ba0a);
@@ -215,6 +215,5 @@
         img {opacity: unset;}
       }
   }
-  .container {margin-bottom: 20%; }
 }
   
