@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import Cover from './components/cover/Cover';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
@@ -8,13 +9,15 @@ import TopNavbar from './components/navbars/TopNavbar';
 
 import './App.scss';
 
-function App() {
-  if (navigator.userAgent.match(/samsung/i)) {
-    alert(`You are using a special browser (Samsung Internet) that 
-    might not display this website's colors properly.`);
-  }
+const App = () => {
+  useEffect(()=>{
+    if (navigator.userAgent.match(/samsung/i)) {
+      alert(`You are using a special browser (Samsung Internet) that 
+      might not display this website's colors properly.`);
+    }
+  },[]);
+  
   return (
-    
     <React.Fragment>
       <div className="top">
         <TopNavbar />
