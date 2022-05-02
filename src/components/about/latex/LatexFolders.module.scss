@@ -156,13 +156,15 @@
 
       .filesGrid {
         width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
       .filesGrid > a {
         min-height: 25px;
         width: 130px;
+        button {
+          width: 16ch !important;
+        }
         
         img {
           height: 12px;
@@ -210,6 +212,41 @@
       .left_arrow { right: 0px; }
       .right_arrow { left: 0px; }
     } 
+    .decriptionPanel {
+      width: 250px;
+      flex-direction: column;
+      .imageContainer {
+        width: 200px;
+        height: 15px;
+        margin-top: -12px;
+        margin-bottom: 12px;
+        &:before { display: none; }
+        span { 
+          color: black;
+          font-size: 13px;
+          // text-transform: uppercase;
+        }
+        .image { 
+          width: 0px; 
+          & > div {
+            left: 97px;
+          }
+        }
+      }
+      .description {
+        width: 100%;
+        .filesGrid {
+          a { 
+            width: 100px;
+            button {
+              width: 13ch !important;
+              img {height: 10px;}
+              span {font-size: 11px; }
+            }
+          }
+        }
+      }
+    }
   }
 
   
