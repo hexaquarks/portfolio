@@ -8,8 +8,8 @@ Second attempt at a portofolio. Hopefully with better UX design this time around
         <tr>
             <td align="center"><img src="https://www.pinclipart.com/picdir/big/537-5374089_react-js-logo-clipart.png" width="40" /></td>
             <td align="center"><code>React</code></td>
-            <th align="center"><img src="https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png" width="35" /></th>
-            <th align="center"><code>Javascript</code></th>
+            <th align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width="35" /></th>
+            <th align="center"><code>Typescript</code></th>
         </tr>
     </thead>
     <tbody>
