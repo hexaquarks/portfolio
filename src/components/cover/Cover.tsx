@@ -4,6 +4,8 @@ import TitleLetter from './TitleLetter';
 import SelectionItem from './SelectionItem';
 import styles from './Cover.module.scss';
 import maLogo from '../../assets/maLogo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 // const styles = require('./Cover.module.scss');
 
 const Cover = () => {
@@ -55,6 +57,14 @@ const Cover = () => {
                 <div className={styles.sideBar} >
                     <div className={styles.sideBarIcon}>
                         <img src={maLogo} className={styles.mainIcon} />
+                    </div>
+                    <div className={styles.sideBarLinks}>
+                        <a href="https://github.com/hexaquarks" target="_blank">
+                            <FontAwesomeIcon icon={faGithub} className={styles.icon}/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mihail-anghelici-85196a20a/" target="_blank">
+                            <FontAwesomeIcon icon={faLinkedin} className={styles.icon}/>
+                        </a>
                     </div>
                     <div className={styles.sideBarSelection} >
                         {selectionItems.map((value, index) => (
