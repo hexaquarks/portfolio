@@ -15,8 +15,8 @@ const About = () => {
             <div className={styles.aboutGrid}>
                 <span className={styles.descriptionHeader}>
                     Hello there, my name is Mihail Anghelici. I am a Software Developer 
-                    based in Montreal currently working as a C++ Software Developer Intern
-                    at InnoveMetric Software. In my free time I like to train at chess, code
+                    based in Montreal currently working as a C++ Software Developer at 
+                    InnoveMetric Software. In my free time I like to train at chess, code
                     my own softwares, and take baths. I am proficient and have demonstratd 
                     experience in C++, Java, Python, Typescript, React, SCSS, and more.
                 </span>
