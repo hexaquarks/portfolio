@@ -1,31 +1,13 @@
 import { useState } from 'react';
-import { Element } from 'react-scroll';
 import styles from './Projects.module.scss';
-import javaIcon from '../../assets/java_icon.png';
-import javaFXIcon from '../../assets/javaFX_icon.png';
-import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
-import cssIcon from '../../assets/css_icon.png';
-import javascriptIcon from '../../assets/javascript_icon_2.png';
-import htmlIcon from '../../assets/html_icon.png';
-import reactIcon from '../../assets/react_icon.png';
-import cppIcon from '../../assets/cpp_icon.png';
-import sfmlIcon from '../../assets/sfml_icon.png';
-import githubIcon from '../../assets/githubBlack.png';
-import particleFunGif from '../../assets/gifTry6.gif';
-import weatherGif from '../../assets/gifWeatherTry3.gif';
-import chessGif from '../../assets/ChessGamePromotionTraversal.gif'
-import knightIcon from '../../assets/knightIcon.png';
-import atomIcon from '../../assets/atomIcon.png'
-import weatherIcon from '../../assets/weatherIcon.png'
+import githubIcon from '../../assets/githubBlack.png'
 import UseWindowDimensions from '../../utilities/UseWindowDimensions'
-import { url } from 'inspector';
-import { ChildProcess } from 'child_process';
+import { gifs, techStackIcons, placeholderIcons } from './Icons'
 
 interface propsInterface {
     link: string,
     title: string,
     description: string,
-    iconPath: string,
     index: number,
     nElements: number
 };
@@ -35,16 +17,8 @@ const isLastComponentOdd = (index: number, nElements: number) => {
 }
 
 const ProjectElement = (props: propsInterface) => {
-    const { link, title, description, iconPath, index, nElements } = props;
-    const gifs = [chessGif, particleFunGif, weatherGif, weatherGif];
+    const { link, title, description, index, nElements } = props;
     const { width, height } = UseWindowDimensions();
-
-    const techStack2 = [
-        [cppIcon, 'C++', sfmlIcon, 'SFML'],
-        [javaIcon, 'Java', javaFXIcon, 'JavaFX', sceneBuilderIcon, 'ScenceBuilder', cssIcon, 'CSS'],
-        [javascriptIcon, 'Javascript', reactIcon, 'React', cssIcon, 'CSS'],
-        []
-    ]
 
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         topPicture: 'top',
@@ -52,8 +26,7 @@ const ProjectElement = (props: propsInterface) => {
         bottomStyle: 'translateZ(-10px)',
         topOpacity: '100%',
         bottomOpacity: '50%'
-    });
-    const iconPaths = [knightIcon, atomIcon, weatherIcon, weatherIcon];
+    })
 
     const [showProject, setShowProject] = useState<Boolean>(false);
 
@@ -112,7 +85,7 @@ const ProjectElement = (props: propsInterface) => {
                 style={{
                     opacity: topOpacity,
                     cursor: setStyle('top', 'cursor'),
-                    backgroundImage: `url(${iconPaths[index]})`
+                    backgroundImage: `url(${placeholderIcons[index]})`
                 }}>
                 <img src={gifs[index]}
                     style={{ opacity: (showProject || width! <= 875) ? '1' : '0' }} />
@@ -126,7 +99,7 @@ const ProjectElement = (props: propsInterface) => {
                 }}>
                 <div className={styles.projectDescriptionTopHeader}>
                     <span>Project Description</span>
-                    <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
+                    <a href={link} target="_blank">
                         <img src={githubIcon} width="30" height="30" />
                     </a>
                 </div>
@@ -134,7 +107,7 @@ const ProjectElement = (props: propsInterface) => {
                     {description}
                 </p>
                 <div className={styles.technologiesContainer}>
-                    {techStack2[index].map((value, i) => {
+                    {techStackIcons[index].map((value, i) => {
                         return (i % 2 == 0)
                             ? (<img src={value} className={styles.gridIcon} />)
                             : (<span> {value} </span>)

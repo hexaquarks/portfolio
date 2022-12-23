@@ -6,8 +6,7 @@ export const projectProps = [
             Fully functional chess game with respect to chess rules
             with additional features such as : Move list traversal, 
             menu options, mechanical utilities, N-Ary tree data 
-            struture for move tree generation, and more.`,
-        projectPlaceholder: "../../assets/knightIcon.png"
+            struture for move tree generation, and more.`
     },
     {
         projectLink: "https://github.com/hexaquarks/Particle_Fun",
@@ -18,8 +17,7 @@ export const projectProps = [
             The dynamic quantity of particles can be arranged in shapes 
             such as: circle, square, diamond, spiral, loose spiral, 
             sunflower spiral. Finally, the shapes can then also be 
-            divided and rotated.`,
-            projectPlaceholder: "../../assets/atomIcon.png"
+            divided and rotated.`
     },
     {
         projectLink: "https://hexaquarks.github.io/Weather_App/#/",
@@ -29,14 +27,16 @@ export const projectProps = [
             displays the daily information overview and detailed 
             information. Further, a 24 hours and 7 days forecast for 
             temperature and precipitation, is displayed in a carousel 
-            container along with bar graphs respectively.`,
-        projectPlaceholder: "../../assets/weatherIcon.png"
+            container along with bar graphs respectively.`
     },
     {
         projectLink: "https://github.com/hexaquarks/ResearchProject",
         projectTitle: "Protein Diffusion",
         projectDescription: `
-            temp`,
-        projectPlaceholder: "../../assets/weatherIcon.png"
+            Simulation and analysis of diffusion of cell membrane proteins 
+            in different confinement models for a McGill research project. The 
+            program first simulates the molecular landscape, then applies 
+            Gaussian filters to reproduce real microscopy images. Finally, 
+            a Gaussian surface decay is animated over time.`
     }
 ]

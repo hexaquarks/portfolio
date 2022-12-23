@@ -11,9 +11,8 @@ const Projects = () => {
                     <ProjectElement link={value.projectLink}
                                     title={value.projectTitle}
                                     description={value.projectDescription}
-                                    iconPath={value.projectPlaceholder}
-                                    index={index}
                                     nElements={projectProps.length}
+                                    index={index}
                                     key={value} />
                 ))}
             </div>
