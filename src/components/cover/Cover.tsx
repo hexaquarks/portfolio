@@ -1,38 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Element } from 'react-scroll'
 import TitleLetter from './TitleLetter';
 import SelectionItem from './SelectionItem';
 import styles from './Cover.module.scss';
+
 import maLogo from '../../assets/maLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-// const styles = require('./Cover.module.scss');
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+
+import { nameLetters, verticalNavbarSelection, githubProfileLink, linkedInProfileLink } from './Util'
 
 const Cover = () => {
-    const nameLetters = [
-        'M', 'i', 'h', 'a', 'i', 'l', '&nbsp;',
-        'A', 'n', 'g', 'h', 'e', 'l', 'i', 'c', 'i'
-    ];
-
-    const selectionItems = [
-        {
-            name: "Home",
-            target: "CoverScrollSection"
-        },
-        {
-            name: "About",
-            target: "AboutScrollSection"
-        },
-        {
-            name: "Projects",
-            target: "ProjectsScrollSection"
-        },
-        {
-            name: "Contact",
-            target: "ContactScrollSection"
-        }
-    ];
-
     const [selectedItem, setSelectedItem] = useState<number>(0);
     const updateSelectedItem = (num: number) => {
         setSelectedItem(num);
@@ -59,15 +37,15 @@ const Cover = () => {
                         <img src={maLogo} className={styles.mainIcon} />
                     </div>
                     <div className={styles.sideBarLinks}>
-                        <a href="https://github.com/hexaquarks" target="_blank">
+                        <a href={githubProfileLink} target="_blank">
                             <FontAwesomeIcon icon={faGithub} className={styles.icon}/>
                         </a>
-                        <a href="https://www.linkedin.com/in/mihail-anghelici-85196a20a/" target="_blank">
+                        <a href={linkedInProfileLink} target="_blank">
                             <FontAwesomeIcon icon={faLinkedin} className={styles.icon}/>
                         </a>
                     </div>
                     <div className={styles.sideBarSelection} >
-                        {selectionItems.map((value, index) => (
+                        {verticalNavbarSelection.map((value, index) => (
                             <SelectionItem name         ={value.name} 
                                         target       ={value.target}
                                         index        ={index}

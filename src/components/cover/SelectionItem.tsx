@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Scroll, { Link }  from 'react-scroll'
+import { Link }  from 'react-scroll'
 import styles from './Cover.module.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCircleInfo, faFolderClosed, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,10 +13,15 @@ interface selectionItemInterface {
     selectedItem: number,
     navbarFlag: boolean   
 }
-const SelectionItem = (props : selectionItemInterface) => {
 
-    const {name, target, index, update, selectedItem, navbarFlag} = props;
+const selectedItemColor: string = "#ffa500"
+const hoveredItemColor: string = "rgba(255,165,0,0.35)"
+const backgroundItemColor: string = "black"
+
+const SelectionItem = (props : selectionItemInterface) => {
     const [animating, setAnimating] = useState<boolean>(false);
+
+    const { name, target, index, update, selectedItem } = props;
     const icons = [faHome, faCircleInfo, faFolderClosed, faIdCard];
 
     return (
@@ -40,8 +46,8 @@ const SelectionItem = (props : selectionItemInterface) => {
                 <div className={styles.selectionRectangle} 
                     style    ={
                     {backgroundColor: selectedItem == index 
-                            ? "#ffa500" 
-                            : animating ? "rgba(255,165,0,0.35)" : "black"
+                            ? selectedItemColor 
+                            : animating ? hoveredItemColor : backgroundItemColor
                     }
                 }> 
                 </div>
