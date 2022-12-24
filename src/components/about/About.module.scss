@@ -9,6 +9,7 @@
      
     #aboutDiv {
         grid-area: 2 / 1 / 3 / 5;
+        width: 105%;
     }
 
     .descriptionHeader {
@@ -84,6 +85,7 @@
     .latexDescription {
         grid-area: 3 / 1 / 4 / 3;
         font-family: 'Open Sans Condensed', sans-serif;
+        margin-left: 1%;
     }
 
     .descriptionHeader, .educationDescription, .latexDescription {
