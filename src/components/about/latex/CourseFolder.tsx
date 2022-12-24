@@ -8,6 +8,8 @@ import noteIcon from '../../../assets/notes.png';
 import bookIcon from '../../../assets/bookIcon.png';
 import codeIcon from '../../../assets/code.png';
 
+import { courseFiles, courseInterface } from './Util';
+
 interface propsInterface {
     value : { id: string, name: string };
     key   : number;
@@ -17,33 +19,14 @@ interface propsInterface {
     setEnableArrows : React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface courseInterface {
-    name: string;
-    files: string[];
-}
-
-function CourseFolder(props : propsInterface) {
+const CourseFolder = (props : propsInterface) => {
   const { value, key, xPos, index, folderWidth, setEnableArrows} = props;
 
   const [image, setImage] = useState<string>(closedFolder);
   const [showDescriptionChild, setShowDescriptionChild] = useState<boolean>(false);
 
   const handleMouseOver = () => { setImage(openFolder); };
-
   const handleMouseLeave = () => { setImage(closedFolder); };
-
-
-  const courses = [
-    { name: 'MATH314', files: ["Notes", "Ass4", "code"] },
-    { name: 'PHYS350', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
-    { name: 'PHYS356', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
-    { name: 'MATH327', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
-    { name: 'MATH475', files: ["Ass1", "Ass2", "Ass3", "code"] },
-    { name: 'MATH325', files: ["Final", "Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
-    { name: 'MATH240', files: ["Ass1", "Ass2", "Ass3", "Ass4", "code"] },
-    { name: 'PHYS241', files: ["Final", "Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
-    { name: 'PHYS230', files: ["Ass5", "Ass7", "Ass8", "Ass9", "Ass10"] },
-  ];
 
   return (
     <div className={styles.folderContainer}>
@@ -55,25 +38,25 @@ function CourseFolder(props : propsInterface) {
             {value.name}
           </span>
           <div className={styles.image}>
-          <div>
-              <img src={downArrow} width="30" onClick={ () => {
-                setShowDescriptionChild(!showDescriptionChild); 
-                setEnableArrows(false)} }
-              />
+            <div>
+                <img src={downArrow} width="30" onClick={ () => {
+                  setShowDescriptionChild(!showDescriptionChild); 
+                  setEnableArrows(false)} }
+                />
             </div>
           </div>
         </div>
         <div className={styles.description}>
           <div className={styles.filesGrid} >
-            {buildButtons(courses, index)}
+            { buildButtons(courseFiles, index) }
           </div>
         </div>
       </div>
 
       <span >{value.id}</span>
       <div key={index}
-        onMouseEnter={() => { handleMouseOver(); }}
-        onMouseLeave={() => { handleMouseLeave(); }}
+        onMouseEnter={() => { handleMouseOver() }}
+        onMouseLeave={() => { handleMouseLeave() }}
         onClick={() => {
           setShowDescriptionChild(!showDescriptionChild);
           setEnableArrows(true);
@@ -87,44 +70,52 @@ function CourseFolder(props : propsInterface) {
   );
 }
 
+const makeClassButton = () => {
+  return { iconPath: bookIcon, fileDisplayFormattedText:  'Class Notes' + '\xa0'.repeat(4)}
+}
+const makeAssignmentButton = (fileName: string) => {
+  const fileDisplayFormattedText = 'Assignment' + ' ' + fileName.substr(fileName.length - 1)
+  return { iconPath: noteIcon, fileDisplayFormattedText }
+}
+const makeFinalExamButton = () => {
+  return { iconPath: noteIcon, fileDisplayFormattedText: 'Final Exam' + '\xa0'.repeat(5) }
+}
+const makeCodeRepoButton = () => {
+  return { iconPath: codeIcon, fileDisplayFormattedText: 'Code Repo' + '\xa0'.repeat(6) }
+}
 
 const buildButtons = (courses : courseInterface[], index : number) => {
-  var buttons: any = [];
+  var buttons: JSX.Element[] = [];
   const globalLink = "https://github.com/hexaquarks/Latex_Files/"; //link header
   const folderPath = "tree/main/"; //for folder
   const notesPath = "blob/main/"; //for any file
   
-  for (var i = 0; i < courses[index].files.length; i++) {
+  for (var i = 0; i < courses[index].files.length; ++i) {
     const course = courses[index];
+    const currFile = course.files[i]
     
-    let firstLetter = course.files[i].charAt(0);
-    let link = globalLink;
-    let iconPath;
-    let text = '';
+    const fileNameFirstLetter = currFile.charAt(0);
+    let fileLink = globalLink;
+    var iconPath = ''
+    var fileDisplayFormattedText = ''
 
-    firstLetter === 'c'
-      ? link += folderPath + course.name + '/' + course.name + '_Tex'
-      : link += notesPath + course.name + '/' + course.name + '_' + course.files[i] + '.pdf';
+    fileNameFirstLetter === 'c'
+      ? fileLink += folderPath + course.name + '/' + course.name + '_Tex'
+      : fileLink += notesPath + course.name + '/' + course.name + '_' + currFile + '.pdf';
 
-    if (firstLetter === 'N') {
-      iconPath = bookIcon;
-      text = 'Class Notes' + '\xa0\xa0\xa0\xa0';
-    } else if (firstLetter === 'A' || firstLetter === 'F') {
-      iconPath = noteIcon;
-      firstLetter === 'A'
-        ? text = 'Assignment' + ' ' + course.files[i].substr(course.files[i].length - 1)
-        : text = `Final Exam` + '\xa0\xa0\xa0\xa0\xa0\xa0';
-    } else {
-      iconPath = codeIcon;
-      text = `Code Repo` + '\xa0\xa0\xa0\xa0\xa0\xa0';
+    switch (fileNameFirstLetter) {
+      case 'N': ({ iconPath, fileDisplayFormattedText } = makeClassButton()); break;
+      case 'A': ({ iconPath, fileDisplayFormattedText } = makeAssignmentButton(currFile)); break;
+      case 'F': ({ iconPath, fileDisplayFormattedText } = makeFinalExamButton()); break;
+      default: ({ iconPath, fileDisplayFormattedText } = makeCodeRepoButton()); break;
     }
 
     buttons.push(
-      <a href={link} target="_blank">
+      <a href={fileLink} target="_blank">
         <button>
           <img src={iconPath} height="12" />
           <span>
-            {text}
+            {fileDisplayFormattedText}
           </span>
         </button>
       </a>

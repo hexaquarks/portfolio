@@ -1,22 +1,11 @@
 import { Fade } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import downArrow from '../../assets/down_arrow.png';
 import styles from './About.module.scss'
+import { universityInterface } from "./Util";
 
-// const styles = require('./About.module.scss');
-
-interface universityInformation {
-    title: string;
-    description: string;
-    year: string;
-    image: string;
-    coursework: {
-        course: string;
-        language: string;
-    }[];
-}
 interface propsInterface {
-    information : universityInformation[];
+    information : universityInterface[];
     index : number;
     selected: boolean;
     onClick: () => void;
