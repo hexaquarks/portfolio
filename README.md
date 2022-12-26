@@ -1,5 +1,5 @@
-# 💼 Portofolio V2
-Second attempt at a portofolio. Hopefully with better UX design this time around. See it [here](https://hexaquarks.github.io/PortofolioV2/)
+# 💼 Portofolio 
+Second attempt at a portofolio. Hopefully with better UX design this time around. See it [here](https://hexaquarks.github.io/portfolio/)
 
 ## 🧰 Technologies
 <div align="center" markdown="1">
