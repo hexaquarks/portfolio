@@ -39,4 +39,12 @@ export const projectProps = [
             Gaussian filters to reproduce real microscopy images. Finally, 
             a Gaussian surface decay is animated over time.`
     },
+    {
+        projectLink: "https://github.com/hexaquarks/portfolio-ecaterina",
+        projectTitle: "Ecaterina's Portfolio",
+        projectDescription: `
+            Fully responsive personal portfolio for a client. She wanted 
+            a simple portfolio in order to attract new clients for her 
+            services as a private social worker.`
+    }
 ]
