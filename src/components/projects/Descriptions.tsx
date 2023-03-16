@@ -1,6 +1,6 @@
 export const projectProps = [
     {
-        projectLink: "https://github.com/hexaquarks/chess_game",
+        projectLink: "https://github.com/hexaquarks/chess-game",
         projectTitle: "Chess Game",
         projectDescription: `
             Fully functional chess game with respect to chess rules
@@ -9,7 +9,7 @@ export const projectProps = [
             struture for move tree generation, and more.`
     },
     {
-        projectLink: "https://github.com/hexaquarks/Particle_Fun",
+        projectLink: "https://github.com/hexaquarks/particle-geometry-simulation",
         projectTitle: "Particle Simulation",
         projectDescription: `
             The program simulates gravitational force, 
@@ -20,7 +20,7 @@ export const projectProps = [
             divided and rotated.`
     },
     {
-        projectLink: "https://hexaquarks.github.io/Weather_App/#/",
+        projectLink: "https://hexaquarks.github.io/weather-app/#/",
         projectTitle: "Weather Application",
         projectDescription: `
             The program fetches data from OpenWweatherMap API API and
@@ -30,7 +30,7 @@ export const projectProps = [
             container along with bar graphs respectively.`
     },
     {
-        projectLink: "https://github.com/hexaquarks/ResearchProject",
+        projectLink: "https://github.com/hexaquarks/research-project",
         projectTitle: "Protein Diffusion",
         projectDescription: `
             Simulation and analysis of diffusion of cell membrane proteins 
@@ -38,5 +38,5 @@ export const projectProps = [
             program first simulates the molecular landscape, then applies 
             Gaussian filters to reproduce real microscopy images. Finally, 
             a Gaussian surface decay is animated over time.`
-    }
+    },
 ]
