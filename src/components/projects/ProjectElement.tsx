@@ -97,6 +97,7 @@ const ProjectElement = (props: propsInterface) => {
                     cursor: setStyle('bottom', 'cursor'),
                     opacity: bottomOpacity
                 }}>
+                <div className={styles.shinyContainer}></div>
                 <div className={styles.projectDescriptionTopHeader}>
                     <span>Project Description</span>
                     <a href={link} target="_blank">
