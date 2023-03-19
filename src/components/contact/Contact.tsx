@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import { useAlert } from 'react-alert';
+import { useForm, ValidationError } from '@formspree/react';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -11,37 +11,18 @@ import informationIcon from '../../assets/informationIcon.jpg';
 import planeIcon from '../../assets/paperPlane.png';
 
 const Contact = () => {
-    
-    // const alert = useAlert();
-
-    const handleSubmit = async (e : any) => {
-        e.preventDefault();
-        const { fname, lname, subject,email, message } = e.target.elements;
-        let details = {
-            fname: fname.value,
-            lname: lname.value,
-            subject: subject.value,
-            email: email.value,
-            message: message.value
-        };
-        let response = await fetch("http://localhost:5000/contact", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(details),
-          });
-        let result = await response.json();
+    const [state, handleSubmit] = useForm("xpzejagd");
+        if (state.succeeded) {
+            return <p>Thanks for joining!</p>;
+        }
         // alert.show(
         //     <div className={styles.alert}>
         //         Message submitted succesfully
         //     </div>
         // )
-    };
+
     return (
         <Element id="ContactScrollSection" name="ContactScrollSection">
-            <form onSubmit={handleSubmit} >
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.leftPanel}>
@@ -64,24 +45,23 @@ const Contact = () => {
                 <div className={styles.rightPanel}>
                     <div className={styles.topicText}>Send me a message</div>
                         <p>For any queries, questions and offers, please send me an email. I will respond immediately.</p>
-                        <form action="#">
+                        <form onSubmit={handleSubmit}>
                             <div className={styles.inputBox}>
-                                <input type="text" placeholder="Enter your name"/>
+                                <textarea name="message" rows={1} placeholder="Enter your name" required/>
                             </div>
                             <div className={styles.inputBox}>
-                                <input type="text" placeholder="Enter your email"/>
+                                <input type="email" placeholder="Enter your email" required/>
                             </div>
-                            <div className={`${styles.inputBox} ${styles.messageBox}`} >
-                                <input type="text" placeholder="Enter your message"/>
+                            <div className={`${styles.inputBox} ${styles.messageBox}`}>
+                                <input type="text" placeholder="Enter your message" required/>
                             </div>
                             <div className={styles.button}>
-                                <input type="button" value="Send Now" />
+                                <input type="submit" value="Send Now" />
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            </form>
         </Element>
     )
 }
