@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styles from './Projects.module.scss';
 import githubIcon from '../../assets/githubBlack.png'
 import UseWindowDimensions from '../../utilities/UseWindowDimensions'
 import { gifs, techStackIcons, placeholderIcons } from './Icons'
+import useClickOutside from '../../utilities/UseClickOutside';
 
 interface propsInterface {
     link: string,
@@ -17,15 +18,37 @@ const isLastComponentOdd = (index: number, nElements: number) => {
 }
 
 const ProjectElement = (props: propsInterface) => {
+
+    
+    
     const { link, title, description, index, nElements } = props;
     const { width, height } = UseWindowDimensions();
-
+    
     const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
         topPicture: 'top',
         topStyle: 'preserve-3d',
         bottomStyle: 'translateZ(-10px)',
         topOpacity: '100%',
         bottomOpacity: '50%'
+    })
+    
+    const ref = useRef<HTMLDivElement>(null);
+
+    useClickOutside(ref, () => {
+        console.log('Clicked outside the component');
+        if (topPicture === 'bottom') {
+            const params: any = {
+                topPicture: ['top', 'bottom'],
+                topStyle: ['preserve-3d', 'none'],
+                bottomStyle: ['translateZ(-10px)', 'translateZ(0px)'],
+                topOpacity: ['100%', '50%'],
+                bottomOpacity: ['50%', '100%']
+            }
+            let obj: any = {};
+    
+            Object.keys(params).forEach(k => obj[k] = params[k][0]);
+            setTopPicture(obj);
+        }
     })
 
     const [showProject, setShowProject] = useState<Boolean>(false);
@@ -70,7 +93,7 @@ const ProjectElement = (props: propsInterface) => {
         }
     }
     return (
-        <div className={styles.projectGif}
+        <div ref={ref} className={styles.projectGif}
             style={{
                 transformStyle: 'preserve-3d',
                 gridColumnStart: isLastComponentOdd(index, nElements) ? 'span 2' : 'unset'
