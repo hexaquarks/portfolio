@@ -1,145 +1,135 @@
 import { useState, useRef } from 'react';
 import styles from './Projects.module.scss';
-import githubIcon from '../../assets/githubBlack.png'
-import UseWindowDimensions from '../../utilities/UseWindowDimensions'
-import { gifs, techStackIcons, placeholderIcons } from './Icons'
+import githubIcon from '../../assets/githubBlack.png';
+import UseWindowDimensions from '../../utilities/UseWindowDimensions';
+import { gifs, techStackIcons, placeholderIcons } from './Icons';
 import useClickOutside from '../../utilities/UseClickOutside';
 
-interface propsInterface {
-    link: string,
-    title: string,
-    description: string,
-    index: number,
-    nElements: number
-};
-
-const isLastComponentOdd = (index: number, nElements: number) => { 
-    return nElements % 2 != 0 && index == nElements - 1
+interface Props {
+    link: string;
+    title: string;
+    description: string;
+    index: number;
+    nElements: number;
 }
 
-const ProjectElement = (props: propsInterface) => {
+interface PictureState {
+    topPicture: string;
+    topStyle: string;
+    bottomStyle: string;
+    topOpacity: string;
+    bottomOpacity: string;
+}
 
-    
-    
-    const { link, title, description, index, nElements } = props;
-    const { width, height } = UseWindowDimensions();
-    
-    const [{ topPicture, topStyle, bottomStyle, bottomOpacity, topOpacity }, setTopPicture] = useState<any | null>({
+interface StyleOptions {
+    first: string;
+    second: string;
+    third: string;
+}
+
+const isLastComponentOdd = (index: number, nElements: number): boolean => nElements % 2 !== 0 && index === nElements - 1;
+
+const ProjectElement = ({ link, title, description, index, nElements }: Props) => {
+    const { width } = UseWindowDimensions();
+    const [pictureState, setPictureState] = useState<PictureState>({
         topPicture: 'top',
         topStyle: 'preserve-3d',
         bottomStyle: 'translateZ(-10px)',
         topOpacity: '100%',
-        bottomOpacity: '50%'
-    })
-    
+        bottomOpacity: '50%',
+    });
     const ref = useRef<HTMLDivElement>(null);
 
     useClickOutside(ref, () => {
-        console.log('Clicked outside the component');
-        if (topPicture === 'bottom') {
-            const params: any = {
-                topPicture: ['top', 'bottom'],
-                topStyle: ['preserve-3d', 'none'],
-                bottomStyle: ['translateZ(-10px)', 'translateZ(0px)'],
-                topOpacity: ['100%', '50%'],
-                bottomOpacity: ['50%', '100%']
-            }
-            let obj: any = {};
-    
-            Object.keys(params).forEach(k => obj[k] = params[k][0]);
-            setTopPicture(obj);
+        if (pictureState.topPicture === 'bottom') {
+            setPictureState({
+                topPicture: 'top',
+                topStyle: 'preserve-3d',
+                bottomStyle: 'translateZ(-10px)',
+                topOpacity: '100%',
+                bottomOpacity: '50%',
+            });
         }
-    })
+    });
 
-    const [showProject, setShowProject] = useState<Boolean>(false);
+    const [showProject, setShowProject] = useState<boolean>(false);
 
-    const setStyle = (stack: string, type: string) => {
-        let option = (type === 'cursor')
+    const setStyle = (stack: string, type: string): string => {
+        const option: StyleOptions = (type === 'cursor')
             ? { first: 'alias', second: 'pointer', third: 'default' }
-            : { first: 'opacityUp', second: 'opacityDown', third: 'opacityDown' }
+            : { first: 'opacityUp', second: 'opacityDown', third: 'opacityDown' };
 
-        if (stack === 'top') {
-            return (topPicture === 'top') ? option.first : option.second;
-        } else {
-            return (topPicture === 'top') ? option.second : option.third;
-        }
-    }
+        return stack === 'top' && pictureState.topPicture === 'top' ? option.first : option.second;
+    };
 
-    const openInNewTab = (url: string) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }
+    const openInNewTab = (url: string): void => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (newWindow) newWindow.opener = null;
+    };
 
-    const changePicture = (stack: string) => {
-        if (stack === "top" && topPicture === "top") {
+    const changePicture = (stack: string): void => {
+        if (stack === "top" && pictureState.topPicture === "top") {
             openInNewTab(link);
         }
 
-        const params: any = {
-            topPicture: ['top', 'bottom'],
-            topStyle: ['preserve-3d', 'none'],
-            bottomStyle: ['translateZ(-10px)', 'translateZ(0px)'],
-            topOpacity: ['100%', '50%'],
-            bottomOpacity: ['50%', '100%']
-        }
-        let obj: any = {};
+        const updatedState: PictureState = {
+            topPicture: stack === 'top' && pictureState.topPicture === 'bottom' ? 'top' : 'bottom',
+            topStyle: stack === 'top' && pictureState.topPicture === 'bottom' ? 'preserve-3d' : 'none',
+            bottomStyle: stack === 'top' && pictureState.topPicture === 'bottom' ? 'translateZ(-10px)' : 'translateZ(0px)',
+            topOpacity: stack === 'top' && pictureState.topPicture === 'bottom' ? '100%' : '50%',
+            bottomOpacity: stack === 'top' && pictureState.topPicture === 'bottom' ? '50%' : '100%',
+        };
+        setPictureState(updatedState);
+    };
 
-        if (stack === 'top' && topPicture === 'bottom') {
-            Object.keys(params).forEach(k => obj[k] = params[k][0]);
-            setTopPicture(obj);
-        } else if (stack === 'bottom' && topPicture === 'top') {
-            Object.keys(params).forEach(k => obj[k] = params[k][1]);
-            setTopPicture(obj);
-        }
-    }
     return (
         <div ref={ref} className={styles.projectGif}
             style={{
                 transformStyle: 'preserve-3d',
-                gridColumnStart: isLastComponentOdd(index, nElements) ? 'span 2' : 'unset'
+                gridColumnStart: isLastComponentOdd(index, nElements) ? 'span 2' : 'unset',
             }}>
-            <span className={styles.title} >
-                {title}
-            </span>
+            <span className={styles.title}>{title}</span>
             <div className={styles.projectPicture}
-                onClick={() => { changePicture('top') }}
+                onClick={() => changePicture('top')}
                 onMouseEnter={() => setShowProject(true)}
                 onMouseLeave={() => setShowProject(false)}
                 style={{
-                    opacity: topOpacity,
+                    opacity: pictureState.topOpacity,
                     cursor: setStyle('top', 'cursor'),
-                    backgroundImage: `url(${placeholderIcons[index]})`
+                    backgroundImage: `url(${ placeholderIcons[index]})`,
                 }}>
-                <img src={gifs[index]}
-                    style={{ opacity: (showProject || width! <= 875) ? '1' : '0' }} />
+                <img src={gifs[index]} style={{ opacity: (showProject || width! <= 875) ? '1' : '0' }} />
             </div>
             <div className={styles.projectDescription}
-                onClick={() => { changePicture('bottom') }}
+                onClick={() => changePicture('bottom')}
                 style={{
-                    transform: bottomStyle,
+                    transform: pictureState.bottomStyle,
                     cursor: setStyle('bottom', 'cursor'),
-                    opacity: bottomOpacity
+                    opacity: pictureState.bottomOpacity,
                 }}>
                 <div className={styles.shinyContainer}></div>
                 <div className={styles.projectDescriptionTopHeader}>
                     <span>Project Description</span>
-                    <a href={link} target="_blank">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
                         <img src={githubIcon} width="30" height="30" />
                     </a>
                 </div>
-                <p>
-                    {description}
-                </p>
+                <p>{description}</p>
                 <div className={styles.technologiesContainer}>
-                    {techStackIcons[index].map((value, i) => {
-                        return (i % 2 == 0)
-                            ? (<img src={value} className={styles.gridIcon} />)
-                            : (<span> {value} </span>)
-                    })}
+                    {techStackIcons[index].map((value, i) => (
+                        i % 2 === 0 ? (
+                            <img key={i} src={value} className={styles.gridIcon} />
+                        ) : (
+                            <span key={i}>{value}</span>
+                        )
+                    ))}
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default ProjectElement;
+
+
+
