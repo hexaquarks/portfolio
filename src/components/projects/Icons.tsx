@@ -20,15 +20,15 @@ import typescriptIcon from '../../assets/typescriptIcon.png'
 import portfolioIcon from '../../assets/portfolioIcon.png'
 import muiIcon from '../../assets/muiIcon.png'
 
-const gifs = [chessGif, particleFunGif, weatherGif, researchGif, portfolioEcaterinaGif];
-const placeholderIcons = [knightIcon, atomIcon, weatherIcon, proteinIcon, portfolioIcon];
+const gifs = [chessGif, particleFunGif,portfolioEcaterinaGif, researchGif, weatherGif];
+const placeholderIcons = [knightIcon, atomIcon, portfolioIcon, proteinIcon, weatherIcon];
 
 const techStackIcons = [
     [cppIcon, 'C++', sfmlIcon, 'SFML'],
     [javaIcon, 'Java', javaFXIcon, 'JavaFX', sceneBuilderIcon, 'ScenceBuilder', cssIcon, 'CSS'],
-    [javascriptIcon, 'Javascript', reactIcon, 'React', cssIcon, 'CSS'],
+    [typescriptIcon, 'Typescript', muiIcon, 'MaterialUI'],
     [pythonIcon, 'Python'],
-    [typescriptIcon, 'Typescript', muiIcon, 'MaterialUI']
+    [javascriptIcon, 'Javascript', reactIcon, 'React', cssIcon, 'CSS']
 
 ]
 

@@ -3,21 +3,39 @@ export const projectProps = [
         projectLink: "https://github.com/hexaquarks/chess-game",
         projectTitle: "Chess Game",
         projectDescription: `
-            Fully functional chess game with respect to chess rules
-            with additional features such as : Move list traversal, 
-            menu options, mechanical utilities, N-Ary tree data 
-            struture for move tree generation, and more.`
+        Fully functional chess game with respect to chess rules
+        with additional features such as : Move list traversal, 
+        menu options, mechanical utilities, N-Ary tree data 
+        struture for move tree generation, and more.`
     },
     {
         projectLink: "https://github.com/hexaquarks/particle-geometry-simulation",
         projectTitle: "Particle Simulation",
         projectDescription: `
-            The program simulates gravitational force, 
-            electrostatic force and allows for elastic collisions.
-            The dynamic quantity of particles can be arranged in shapes 
-            such as: circle, square, diamond, spiral, loose spiral, 
-            sunflower spiral. Finally, the shapes can then also be 
-            divided and rotated.`
+        The program simulates gravitational force, 
+        electrostatic force and allows for elastic collisions.
+        The dynamic quantity of particles can be arranged in shapes 
+        such as: circle, square, diamond, spiral, loose spiral, 
+        sunflower spiral. Finally, the shapes can then also be 
+        divided and rotated.`
+    },
+    {
+        projectLink: "https://github.com/hexaquarks/portfolio-ecaterina",
+        projectTitle: "Ecaterina's Portfolio",
+        projectDescription: `
+            Fully responsive personal portfolio for a client. She wanted 
+            a simple portfolio in order to attract new clients for her 
+            services as a private social worker.`
+    },
+    {
+        projectLink: "https://github.com/hexaquarks/research-project",
+        projectTitle: "Protein Diffusion",
+        projectDescription: `
+        Simulation and analysis of diffusion of cell membrane proteins 
+        in different confinement models for a McGill research project. The 
+        program first simulates the molecular landscape, then applies 
+        Gaussian filters to reproduce real microscopy images. Finally, 
+        a Gaussian surface decay is animated over time.`
     },
     {
         projectLink: "https://hexaquarks.github.io/weather-app/#/",
@@ -29,22 +47,4 @@ export const projectProps = [
             temperature and precipitation, is displayed in a carousel 
             container along with bar graphs respectively.`
     },
-    {
-        projectLink: "https://github.com/hexaquarks/research-project",
-        projectTitle: "Protein Diffusion",
-        projectDescription: `
-            Simulation and analysis of diffusion of cell membrane proteins 
-            in different confinement models for a McGill research project. The 
-            program first simulates the molecular landscape, then applies 
-            Gaussian filters to reproduce real microscopy images. Finally, 
-            a Gaussian surface decay is animated over time.`
-    },
-    {
-        projectLink: "https://github.com/hexaquarks/portfolio-ecaterina",
-        projectTitle: "Ecaterina's Portfolio",
-        projectDescription: `
-            Fully responsive personal portfolio for a client. She wanted 
-            a simple portfolio in order to attract new clients for her 
-            services as a private social worker.`
-    }
 ]
