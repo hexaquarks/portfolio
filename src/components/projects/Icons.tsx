@@ -25,7 +25,7 @@ const gifs = [
 ];
 
 const placeholderIcons = [
-    FaJava.length,
+    knightIcon,
     atomIcon,
     portfolioIcon,
     proteinIcon,
