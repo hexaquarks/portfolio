@@ -4,6 +4,7 @@ import githubIcon from '../../assets/githubBlack.png';
 import UseWindowDimensions from '../../utilities/UseWindowDimensions';
 import { gifs, techStackIcons, placeholderIcons } from './Icons';
 import useClickOutside from '../../utilities/UseClickOutside';
+import React from 'react';
 
 interface Props {
     link: string;
@@ -96,7 +97,7 @@ const ProjectElement = ({ link, title, description, index, nElements }: Props) =
                 style={{
                     opacity: pictureState.topOpacity,
                     cursor: setStyle('top', 'cursor'),
-                    backgroundImage: `url(${ placeholderIcons[index]})`,
+                    backgroundImage: `url(${placeholderIcons[index]})`,
                 }}>
                 <img src={gifs[index]} style={{ opacity: (showProject || width! <= 875) ? '1' : '0' }} />
             </div>
@@ -118,7 +119,10 @@ const ProjectElement = ({ link, title, description, index, nElements }: Props) =
                 <div className={styles.technologiesContainer}>
                     {techStackIcons[index].map((value, i) => (
                         i % 2 === 0 ? (
-                            <img key={i} src={value} className={styles.gridIcon} />
+                            // If value is an icon component
+                            <div key={i} className={styles.gridIcon}>
+                                {React.createElement(value)}
+                            </div>
                         ) : (
                             <span key={i}>{value}</span>
                         )

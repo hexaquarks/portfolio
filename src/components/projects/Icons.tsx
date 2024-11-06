@@ -1,15 +1,6 @@
 // Tech stack icons displayed in the descriptions of each personal project 
-import javaIcon from '../../assets/java_icon.png';
-import javaFXIcon from '../../assets/javaFX_icon.png';
-import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
-import cssIcon from '../../assets/css_icon.png';
-import javascriptIcon from '../../assets/javascript_icon_2.png';
-import reactIcon from '../../assets/react_icon.png';
-import cppIcon from '../../assets/cpp_icon.png';
-import sfmlIcon from '../../assets/sfml_icon.png';
-import pythonIcon from '../../assets/pythonIcon.png';
-import typescriptIcon from '../../assets/typescriptIcon.png';
-import muiIcon from '../../assets/muiIcon.png';
+import { FaJava, FaCss3Alt, FaJsSquare, FaReact, FaPython } from 'react-icons/fa';
+import { SiCplusplus, SiTypescript, SiMui, SiSfml } from 'react-icons/si';
 
 // The gifs associated with each personal project when hovering the component
 import particleFunGif from '../../assets/gifTry6.gif';
@@ -26,31 +17,47 @@ import proteinIcon from '../../assets/proteinIcon.png';
 import weatherIcon from '../../assets/weatherIcon.png';
 
 const gifs = [
-  chessGif,
-  particleFunGif,
-  portfolioEcaterinaGif,
-  researchGif,
-  weatherGif,
+    chessGif,
+    particleFunGif,
+    portfolioEcaterinaGif,
+    researchGif,
+    weatherGif,
 ];
 
 const placeholderIcons = [
-  knightIcon,
-  atomIcon,
-  portfolioIcon,
-  proteinIcon,
-  weatherIcon,
+    FaJava.length,
+    atomIcon,
+    portfolioIcon,
+    proteinIcon,
+    weatherIcon,
 ];
 
 const techStackIcons = [
-  [cppIcon, 'C++', sfmlIcon, 'SFML'],
-  [javaIcon, 'Java', javaFXIcon, 'JavaFX', sceneBuilderIcon, 'ScenceBuilder', cssIcon, 'CSS'],
-  [typescriptIcon, 'Typescript', muiIcon, 'MaterialUI'],
-  [pythonIcon, 'Python'],
-  [javascriptIcon, 'Javascript', reactIcon, 'React', cssIcon, 'CSS'],
+    [
+        SiCplusplus, 'C++',
+        SiSfml, 'SFML',
+    ],
+    [
+        FaJava, 'Java',
+        FaJava, 'JavaFX',
+        FaCss3Alt, 'CSS',
+    ],
+    [
+        SiTypescript, 'Typescript',
+        SiMui, 'MaterialUI',
+    ],
+    [
+        FaPython, 'Python',
+    ],
+    [
+        FaJsSquare, 'Javascript',
+        FaReact, 'React',
+        FaCss3Alt, 'CSS',
+    ],
 ];
 
 export {
-  gifs,
-  techStackIcons,
-  placeholderIcons,
+    gifs,
+    techStackIcons,
+    placeholderIcons,
 };

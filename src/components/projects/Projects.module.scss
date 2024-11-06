@@ -188,7 +188,6 @@
             height: 100%;
             background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
             transform: skewX(-30deg);
-            animation: shine 3s infinite;
             opacity: 0.6;
           }
         }
@@ -217,17 +216,33 @@
             ". . . ."
             ". . . ."; 
           color: aliceblue;
-          .gridIcon {
+
+            .gridIcon {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-          }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .gridIcon svg {
+                width: 100%;
+                height: 100%;
+            }
           & > span {
             font-weight: 600;
             font-size: clamp(0.7rem, 2.5vw, 1.2rem);
             align-self: center;
             margin-left: 10px;
           }
+        }
+
+        .technologiesContainer > span {
+            font-weight: 600;
+            font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+            align-self: center;
+            margin-left: 10px;
         }
     }
     
@@ -256,14 +271,5 @@
       .projectPicture {
         img {opacity: unset;}
       }
-  }
-}
-
-@keyframes shine {
-  0% {
-      top: -100%;
-  }
-  100% {
-      top: 100%;
   }
 }
